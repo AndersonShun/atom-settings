@@ -1,0 +1,122 @@
+@border-contrast: 15%;
+
+.colored-btn (@color) {
+  background-color: @color;
+  color: @text-color-selected;
+
+  &:hover {
+    outline-color: darken(@color, @border-contrast);
+  }
+
+  @selected-color: darken(@color, 8.5%);
+
+  &.selected,
+  &.selected:hover {
+    background-color: @selected-color;
+  }
+
+  &.selected:hover {
+    outline-color: darken(@selected-color, @border-contrast);
+  }
+
+  &:active,
+  &:active:focus,
+  &.selected:active,
+  &.selected:active:focus {
+    &:extend(.btn:active);
+  }
+
+  &.icon {
+    &:hover,
+    &:before {
+      color: @text-color-selected;
+    }
+  }
+}
+
+.btn {
+  .rem(padding, 0, @input-height/2);
+  .rem(line-height, @input-height);
+  background-color: @button-background-color;
+  color: @text-color;
+  border-radius: @component-border-radius;
+  font-size: 1.0rem;
+  height: auto;
+
+  &:hover {
+    outline: 2px solid @button-border-color;
+    outline-offset: -2px;
+  }
+
+  &:active {
+    .contrast(background-color, @button-background-color, 25%);
+    color: @text-color;
+    box-shadow: none;
+    transform: scale(0.965, 0.965);
+  }
+
+  &:hover,
+  &:focus,
+  &.icon:hover {
+    color: @text-color;
+  }
+
+  &:focus,
+  &:active:focus {
+    outline: none; // reset
+  }
+
+  &.selected {
+    background-color: @button-background-color-selected;
+    color: @text-color-selected;
+
+    &:hover {
+      outline-color: darken(@button-background-color-selected, @border-contrast);
+    }
+
+    &:active {
+      &:extend(.btn:active);
+    }
+  }
+
+  &.btn-default {
+    &:extend(.btn all);
+  }
+
+  &.btn-primary { .colored-btn(@theme-accent-color); }
+  &.btn-info    { .colored-btn(@background-color-info); }
+  &.btn-success { .colored-btn(@background-color-success); }
+  &.btn-warning { .colored-btn(@background-color-warning); }
+  &.btn-error   { .colored-btn(@background-color-error); }
+}
+
+.btn-group > .btn {
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  background-clip: padding-box; // use the default styling to create a fake margin
+}
+
+.btn-group(@size, @rules) {
+  .btn.btn-@{size},
+  .btn-group-@{size} > .btn {
+    @rules();
+  }
+}
+
+.btn-group(lg, {
+  .rem(font-size, @font-size-large);
+  .rem(line-height, @input-height*1.45);
+  .rem(padding, 0, @input-height/2);
+});
+
+.btn-group(sm, {
+  .rem(font-size, @font-size-medium);
+  .rem(line-height, @input-height*0.75);
+  .rem(padding, 0, @input-height/4);
+});
+
+.btn-group(xs, {
+  .rem(font-size, @font-size-medium);
+  .rem(line-height, @input-height*0.65);
+  .rem(padding, 0, @input-height/4);
+});

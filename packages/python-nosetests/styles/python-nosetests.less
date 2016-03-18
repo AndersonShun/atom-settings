@@ -1,0 +1,117 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.python-nosetests {
+
+  width: 40em;
+  height: 100%;
+  font-size: 90%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+
+  .resizable-panel-handle {
+    flex: 0 0 10px;
+    cursor: col-resize;
+  }
+
+  .mainview {
+    flex: 1 1 auto;
+    height: 100%;
+    flex-direction: column;
+
+    display: flex;
+
+    .header {
+      color: @text-color-subtle;
+      flex: 0 0 auto;
+    }
+
+    .bar {
+      background-color: @background-color-highlight;
+      flex: 0 0 7px;
+      cursor: row-resize;
+    }
+
+  }
+
+  .mainview.muted {
+    opacity: 0.6;
+  }
+
+
+  .listview {
+    flex: 0.5;
+    overflow: auto;
+    color: @text-color;
+
+    .badge  {
+      margin-left: 0.6em;
+      font-weight: bold;
+    }
+
+    .active {
+      background-color: @background-color-highlight;
+      font-weight: bold;
+    }
+
+    ul ul span {
+      padding-left: 1em;
+    }
+  }
+
+  .errorview {
+    flex: 0.5;
+    overflow: auto;
+
+    ul {
+      list-style-type:none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      border-top: 1px solid @text-color-subtle;
+      padding: 0.5em;
+    }
+
+    // li.selected {
+    //   background-color:@inset-panel-background-color;
+    // }
+
+    li.mute {
+      opacity: 0.4;
+    }
+
+    .filename {
+      color: @text-color-subtle;
+    }
+
+    .function {
+      color: @text-color-subtle;
+
+      span {
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        color: @text-color;
+      }
+    }
+
+    .code {
+      font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+      margin-left: 1em;
+      color: @text-color;
+      background: inherit;
+      white-space: pre;
+    }
+
+    .message {
+      white-space: pre;
+    }
+  }
+}

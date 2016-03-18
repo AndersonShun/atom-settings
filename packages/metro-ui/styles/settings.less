@@ -1,0 +1,127 @@
+.settings-view {
+  .setting-title {
+    font-size: 1.0rem;
+  }
+
+  .setting-description {
+    .rem(font-size, @font-size-medium);
+  }
+
+  input[type="checkbox"] {
+    &:active,
+    &:checked {
+      background-color: @theme-accent-color;
+    }
+  }
+
+  .config-menu {
+    .contrast(background-color, @tree-view-background-color, 3.5%);
+  }
+
+  div > section.section {
+    &.settings-panel {
+      border-top: none;
+
+      .section-body {
+        padding: @component-padding;
+      }
+    }
+  }
+
+  .section {
+    &,
+    &:last-child,
+    &:first-child{
+      .rem(padding, @component-padding*2);
+    }
+
+    .section-heading {
+      &:extend(h1);
+      &.icon:before {
+        font-size: inherit;
+        width: auto;
+        height: auto;
+        padding-right: @component-icon-padding;
+      }
+    }
+
+    .sub-section-heading.icon:before {
+      display: none;
+    }
+
+    atom-text-editor[mini],
+    atom-text-editor[mini]::shadow {
+      opacity: 1; // reset
+    }
+  }
+
+  .panels {
+    & > div:not(.package-detail) {
+      .package-card .btn:not(.install-button) {
+        background-color: transparent;
+        max-width: @component-icon-size; // shrink to hide text
+        padding: 0;
+
+        &:hover {
+          outline: none;
+        }
+
+        &:hover:before {
+          color: @theme-accent-color;
+        }
+      }
+
+      .btn.install-button {
+        &:extend(.btn.btn-primary all);
+      }
+    }
+  }
+
+  .package-card {
+    font-size: 1.0rem;
+    padding: 1.0rem;
+    background-color: transparent;
+    border: none;
+    border-radius: @component-border-radius;
+
+    &:hover {
+      .contrast(background-color, @pane-item-background-color, 6.5%);
+    }
+
+    .meta-user .avatar {
+      width: 34px;
+      height: 34px;
+    }
+
+    .card-name {
+      line-height: 1;
+      font-weight: 600;
+    }
+  }
+
+  .link {
+    &:extend(a all);
+  }
+
+  .package-readme {
+    font-size: 1.0rem
+  }
+
+  .package-detail {
+    .btn.uninstall-button {
+      &:extend(.btn.btn-primary all);
+    }
+  }
+
+  table {
+    tbody tr:nth-child(odd) {
+      .contrast(background-color, @pane-item-background-color, 5%);
+    }
+  }
+}
+
+// resets
+.form-control,
+.settings-view select.form-control {
+  &:extend(select all);
+}

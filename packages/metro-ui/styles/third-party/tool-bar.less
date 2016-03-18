@@ -1,0 +1,60 @@
+.tool-bar {
+  background-color: @tool-bar-background-color;
+  border: none;
+
+  button.tool-bar-btn {
+    background-color: transparent;
+    margin: 0;
+
+    &:hover  { .contrast(background-color, @tool-bar-background-color, @contrast-hover); }
+    &:active { .contrast(background-color, @tool-bar-background-color, @contrast-active); }
+  }
+
+  &.tool-bar-vertical,
+  &.tool-bar-horizontal {
+    .tool-bar-spacer {
+      border-bottom: none;
+      border-top: none;
+    }
+  }
+
+  &.tool-bar-vertical .tool-bar-spacer {
+    .rem(margin, @component-padding/2, 0);
+  }
+
+  &.tool-bar-horizontal .tool-bar-spacer {
+    .rem(margin, 0, @component-padding/2);
+  }
+
+  &.tool-bar-left,
+  &.tool-bar-right {
+    .tool-bar-btn:first-of-type {
+      .rem(margin-bottom, @component-padding);
+      background-color: @tab-background-color;
+      color: @tab-text-color;
+
+      &:hover  { background-color: lighten(@tab-background-color, 3.5%); }
+      &:active { background-color: darken(@tab-background-color, 3.5%); }
+    }
+  }
+
+  &.tool-bar-16px,
+  &.tool-bar-24px,
+  &.tool-bar-32px {
+    .tool-bar-btn:before {
+      .rem(line-height, @tab-height);
+      .rem(font-size, 22px);
+    }
+
+    .tool-bar-btn,
+    &.tool-bar-vertical,
+    &.tool-bar-vertical .tool-bar-space {
+      .rem(width, @tab-height + 4px);
+    }
+
+    .tool-bar-btn,
+    &.tool-bar-horizontal {
+      .rem(height, @tab-height);
+    }
+  }
+}

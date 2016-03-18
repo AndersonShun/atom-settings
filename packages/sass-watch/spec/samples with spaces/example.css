@@ -1,0 +1,12 @@
+.foo {
+  color: #fff;
+  font-weight: bold; }
+
+body {
+  color: #444;
+  font-size: 1em;
+  font-family: sans-serif; }
+  body p {
+    color: #2b2b2b; }
+    body p a {
+      color: #9bf; }

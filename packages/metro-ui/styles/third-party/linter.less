@@ -1,0 +1,57 @@
+linter-bottom-tab {
+  .contrast(color, @status-bar-background-color, 18.25%);
+  vertical-align: baseline;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  line-height: inherit;
+
+  &.active {
+    .contrast(background-color, @status-bar-background-color, 6.75%);
+    color: @text-color;
+
+    .count {
+      color: @theme-accent-color;
+    }
+  }
+}
+
+#linter-panel:empty {
+  display: none;
+}
+
+#linter-inline {
+  background-color: @tool-panel-background-color;
+  color: @text-color;
+  box-shadow: none;
+  .font-family;
+
+  a {
+    &:extend(a all);
+  }
+
+  &:before {
+    border-color:
+      transparent
+      transparent
+      @tool-panel-background-color
+      @tool-panel-background-color;
+  }
+}
+
+[metro-ui-show-gutter-styling="true"] {
+  atom-text-editor,
+  atom-text-editor::shadow {
+    .gutter {
+      .linter-highlight {
+        .icon-right {
+          opacity: 1;
+
+          &:before {
+            font-size: 1.0em;
+          }
+        }
+      }
+    }
+  }
+}

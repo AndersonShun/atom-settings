@@ -1,0 +1,76 @@
+.list-tree-item(@ruleset) {
+  li:not(.list-nested-item),
+  li.list-nested-item > .list-item {
+    @ruleset();
+  }
+}
+
+.list-tree-item(@class, @ruleset) {
+  li:not(.list-nested-item).@{class},
+  li.list-nested-item.@{class} > .list-item {
+    @ruleset();
+  }
+}
+
+.list-tree {
+  .list-tree-item({
+    .rem(line-height, @tree-item-height);
+    color: @text-color;
+  });
+
+  .list-tree-item(selected, {
+    color: @text-color-selected;
+  });
+
+  .selected:before {
+    .rem(height, @tree-item-height);
+  }
+
+  li:not(.selected) {
+    &.expanded > .list-item > .icon:before {
+      color: @theme-accent-color;
+    }
+  }
+}
+
+.list-group {
+  .selected {
+    &, .icon {
+      color: @text-color-selected;
+    }
+
+    .key-binding,
+    .secondary-line {
+      .contrast(color, @theme-accent-color, 25%);
+    }
+  }
+
+  .status.icon {
+    float: right;
+  }
+
+  .secondary-line {
+    .rem(font-size, @font-size-medium);
+  }
+
+  .key-binding {
+    .rem(font-size, @font-size-small);
+  }
+}
+
+.list-tree,
+.list-group {
+  .icon:before {
+    height: 100%;
+    line-height: 100%;
+    top: 0;
+  }
+
+  li {
+    clear: both;
+
+    &.selected:before {
+      background-color: @background-color-selected;
+    }
+  }
+}

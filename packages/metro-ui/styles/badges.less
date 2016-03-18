@@ -1,0 +1,17 @@
+.badge {
+  border-radius: @component-border-radius;
+  background-color: @badge-background-color;
+  color: @badge-text-color;
+
+  &.badge-large {
+    font-size: 1.0rem;
+  }
+
+  &.badge-medium {
+    .rem(font-size, @font-size-medium);
+  }
+
+  &.badge-small {
+    .rem(font-size, @font-size-small);
+  }
+}

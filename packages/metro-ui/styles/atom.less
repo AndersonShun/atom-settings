@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: @font-size;
+  .font-family;
+}
+
+body {
+  color: @text-color;
+}
+
+atom-workspace {
+	background-color: @app-background-color;
+}
+
+a {
+  color: @theme-accent-color;
+  &:hover  { color: lighten(@theme-accent-color, 7.5%); }
+  &:active { color: darken(@theme-accent-color, 15%); }
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}

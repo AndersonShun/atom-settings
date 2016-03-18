@@ -1,0 +1,123 @@
+{
+  "name": "sass-director",
+  "main": "./lib/sass-director",
+  "version": "0.3.0",
+  "description": "Sass Director helps manage Sass Projects better by tracking your manifest files",
+  "activationCommands": {
+    "atom-workspace": "sass-director:toggle"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sass-Director/Sass-Director_Atom.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "mkdirp": "0.5.0",
+    "node-fs": "0.1.7",
+    "underscore-plus": "1.6.6"
+  },
+  "readme": "# Sass Director Package for Atom\n\nSass Director helps manage Sass Projects better by tracking your manifest files\n\n### Installation\n\n```\napm install sass-director\n```\n\n### Features\n\n* add multiple manifest files\n* remove manifest files from being watched\n* generate multiple sass projects using multiple manifests\n\n### Tutorial\n\n1. Run ```Sass Director: Toggle``` to activate the project\n2. Add Manifest Files you wish to generate Files/Directories for calling the ```Sass Director: Add Manifest File``` command\n3. Once ready, call ```Sass Director: Generate``` to create the folders and files for each added manifest\n\n### License\n\nMIT\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/Sass-Director/Sass-Director_Atom/issues"
+  },
+  "homepage": "https://github.com/Sass-Director/Sass-Director_Atom#readme",
+  "_id": "sass-director@0.3.0",
+  "_shasum": "8361ceeabda983d45ac7a1cd081294bf1f57e908",
+  "_resolved": "file:../d-1151017-65396-m4zvz6/package.tgz",
+  "_from": "../d-1151017-65396-m4zvz6/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [
+      {
+        "name": "mkdirp",
+        "version": "0.5.0",
+        "path": "node_modules/mkdirp/index.js"
+      },
+      {
+        "name": "minimist",
+        "version": "0.0.8",
+        "path": "node_modules/mkdirp/node_modules/minimist/index.js"
+      },
+      {
+        "name": "node-fs",
+        "version": "0.1.7",
+        "path": "node_modules/node-fs/lib/fs.js"
+      },
+      {
+        "name": "underscore-plus",
+        "version": "1.6.6",
+        "path": "node_modules/underscore-plus/lib/underscore-plus.js"
+      },
+      {
+        "name": "underscore",
+        "version": "1.6.0",
+        "path": "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      }
+    ],
+    "extensions": {
+      ".coffee": [
+        "lib/sass-director-factory.coffee",
+        "lib/sass-director-view.coffee",
+        "lib/sass-director.coffee"
+      ],
+      ".js": [
+        "node_modules/mkdirp/bin/cmd.js",
+        "node_modules/mkdirp/examples/pow.js",
+        "node_modules/mkdirp/index.js",
+        "node_modules/mkdirp/node_modules/minimist/example/parse.js",
+        "node_modules/mkdirp/node_modules/minimist/index.js",
+        "node_modules/node-fs/example.js",
+        "node_modules/node-fs/lib/fs.js",
+        "node_modules/underscore-plus/lib/underscore-plus.js",
+        "node_modules/underscore-plus/node_modules/underscore/underscore-min.js",
+        "node_modules/underscore-plus/node_modules/underscore/underscore.js"
+      ],
+      ".json": [
+        "node_modules/mkdirp/node_modules/minimist/package.json",
+        "node_modules/mkdirp/package.json",
+        "node_modules/node-fs/package.json",
+        "node_modules/underscore-plus/node_modules/underscore/package.json",
+        "node_modules/underscore-plus/package.json",
+        "package.json"
+      ]
+    },
+    "folders": [
+      {
+        "paths": [
+          "lib",
+          "",
+          "spec"
+        ],
+        "dependencies": {
+          "mkdirp": "0.5.0",
+          "node-fs": "0.1.7",
+          "underscore-plus": "1.6.6"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/mkdirp/bin",
+          "node_modules/mkdirp/examples",
+          "node_modules/mkdirp",
+          "node_modules/mkdirp/test"
+        ],
+        "dependencies": {
+          "minimist": "0.0.8"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/underscore-plus/lib",
+          "node_modules/underscore-plus"
+        ],
+        "dependencies": {
+          "underscore": "~1.6.0"
+        }
+      }
+    ]
+  }
+}

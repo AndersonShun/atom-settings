@@ -1,0 +1,95 @@
+@gutter-added-color: mix(@theme-base, @text-color-added);
+@gutter-modified-color: mix(@theme-base, @text-color-modified);
+
+[metro-ui-show-gutter-styling="true"] {
+  atom-text-editor,
+  atom-text-editor::shadow {
+    .gutter {
+      background-color: @gutter-background-color;
+
+      .line-number {
+        color: @gutter-text-color;
+        opacity: 1; // reset
+
+        &.git-line-removed {
+          &:before {
+            color: @text-color-removed;
+            border-left-color: @text-color-removed;
+            border-width: 8px;
+            margin-top: -8px;
+            bottom: -8px;
+            right: 0;
+            left: initial;
+            transform: rotate(-180deg);
+            z-index: 1;
+          }
+
+          &:after {
+            display: none; // reset
+          }
+        }
+
+        &.git-line-added,
+        &.git-line-modified {
+          border-left: none;
+          padding-left: 0.5em; // reset
+        }
+
+        [metro-ui-theme="adaptive-dark"]& {
+          &.git-line-added {
+            background-color: fadeout(@gutter-added-color, 80%);
+            color: @gutter-added-color;
+
+            &.cursor-line-no-selection {
+              background-color: fadeout(@gutter-added-color, 67.5%);
+              color: @text-color-added;
+            }
+          }
+
+          &.git-line-modified {
+            background-color: fadeout(@gutter-modified-color, 80%);
+            color: @gutter-modified-color;
+
+            &.cursor-line-no-selection {
+              background-color: fadeout(@gutter-modified-color, 67.5%);
+              color: @text-color-modified;
+            }
+          }
+
+          &.cursor-line {
+            background-color: lighten(@gutter-background-color, 12.5%);
+            color: lighten(@gutter-background-color, 32.5%);
+          }
+
+          &.cursor-line-no-selection {
+            background-color: lighten(@gutter-background-color, 5%);
+            color: @text-color;
+          }
+        }
+
+        [metro-ui-theme="light"]&,
+        [metro-ui-theme="adaptive-light"]& {
+          &.git-line-added {
+            background-color: lighten(@text-color-added, 45%);
+            color: @text-color-added;
+          }
+
+          &.git-line-modified {
+            background-color: lighten(@text-color-modified, 35%);
+            color: @text-color-modified;
+          }
+
+          &.cursor-line {
+            background-color: darken(@gutter-background-color, 12.5%);
+            color: darken(@gutter-background-color, 32.5%);
+          }
+
+          &.cursor-line-no-selection {
+            background-color: transparent;
+            color: @theme-accent-color;
+          }
+        }
+      }
+    }
+  }
+}

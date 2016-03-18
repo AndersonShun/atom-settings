@@ -1,0 +1,34 @@
+{
+  "name": "white-ui",
+  "theme": "ui",
+  "version": "2.4.1",
+  "description": "Minimal white UI theme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamtguerra/white-ui.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "readme": "# White theme\n\nMinimal white UI theme for Atom.\n\nSee the dark version of this theme [here](https://atom.io/packages/black-ui).\n\n![](https://raw.githubusercontent.com/williamtguerra/white-ui/master/screenshot.png)\n\n* No rounded corners\n* No bevels\n* No gradients\n* No shadows\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/williamtguerra/white-ui/issues"
+  },
+  "homepage": "https://github.com/williamtguerra/white-ui#readme",
+  "_id": "white-ui@2.4.1",
+  "_shasum": "9ebab73b24bbc46fcf163da3e649b77ff03aaad3",
+  "_resolved": "file:../d-115114-79576-29qo6i/package.tgz",
+  "_from": "../d-115114-79576-29qo6i/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}

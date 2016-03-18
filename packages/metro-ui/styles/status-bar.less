@@ -1,0 +1,67 @@
+status-bar {
+  .rem(line-height, @status-bar-height);
+  .rem(height, @status-bar-height);
+  background-color: @status-bar-background-color;
+  font-size: 1.0rem;
+
+  .inline-block {
+    vertical-align: baseline;
+  }
+
+  .icon:before {
+    font-size: @component-icon-size;
+  }
+
+  .status-bar-right {
+    .icon:before {
+      margin-right: @component-icon-padding;
+    }
+  }
+
+  encoding-selector-status.encoding-status,
+  grammar-selector-status.grammar-status {
+    a {
+      text-align: center;
+      .rem(min-width, 60px);
+    }
+  }
+}
+
+[metro-ui-fullscreen-status-bar="true"] {
+  status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  atom-workspace {
+    .rem(@status-bar-height);
+    height: calc(~"100% - " @rem);
+  }
+}
+
+// Remove unnecessary clutter
+[metro-ui-hide-status-bar-file="true"] {
+  status-bar [is="status-bar-file"] {
+    display: none;
+  }
+}
+
+[metro-ui-hide-status-bar-cursor="true"] {
+  status-bar [is="status-bar-cursor"] {
+    display: none;
+  }
+}
+
+[metro-ui-hide-status-bar-selection="true"] {
+  status-bar [is="status-bar-selection"] {
+    display: none;
+  }
+}
+
+[metro-ui-hide-status-bar-launch-mode="true"] {
+  status-bar [is="status-bar-launch-mode"] {
+    display: none;
+  }
+}

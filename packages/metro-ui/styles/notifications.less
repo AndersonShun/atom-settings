@@ -1,0 +1,39 @@
+.background-message {
+  .contrast(color, @app-background-color, 40%);
+  font-weight: 600;
+}
+
+atom-notification {
+  font-size: 1.0rem;
+  margin-bottom: 1px;
+
+  .btn.close-all {
+    border: none !important;
+    padding: 0;
+    top: 2px;
+  }
+
+  &.icon:before {
+    font-size: 20px;
+  }
+
+  code {
+    .rem(font-size, @font-size-medium);
+  }
+
+  .description {
+    .rem(font-size, @font-size-medium);
+  }
+
+  .detail {
+    .rem(font-size, @font-size-small);
+  }
+
+  .close {
+    opacity: .45;
+
+    &:before {
+      .icon-size(14px);
+    }
+  }
+}
