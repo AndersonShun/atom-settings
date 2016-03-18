@@ -1,0 +1,45 @@
+{
+  "name": "language-api-blueprint",
+  "version": "1.0.2",
+  "description": "API Blueprint & MSON Grammars",
+  "scripts": {
+    "build": "node generate-grammar.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielgtaylor/atom-language-api-blueprint.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "async": "^0.9.0",
+    "plist": "^1.1.0",
+    "season": "^5.2.0"
+  },
+  "readme": "# API Blueprint Grammar for Atom\n\nAn Atom grammar for [API Blueprint](https://apiblueprint.org/), generated from the associated [Sublime Text plugin](https://github.com/apiaryio/api-blueprint-sublime-plugin). Install by searching for `API Blueprint` in the Atom preferences.\n\n![API Blueprint Atom Screenshot](https://cloud.githubusercontent.com/assets/106826/7290957/fc6f6d7e-e93c-11e4-84d2-b61e8d59eb78.png)\n\n## Updating\n\nThis grammar can be updated automatically whenever the associated Sublime Text plugin has been updated:\n\n```sh\n$ npm install\n$ npm run build\n$ git add grammars/apiblueprint.cson\n$ git commit -m 'Updating ...'\n$ apm publish minor\n```\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/danielgtaylor/atom-language-api-blueprint/issues"
+  },
+  "homepage": "https://github.com/danielgtaylor/atom-language-api-blueprint#readme",
+  "_id": "language-api-blueprint@1.0.2",
+  "_shasum": "a375fbd7be5b2f31fb9a218c10362eac5e0b266f",
+  "_resolved": "file:../d-116218-28138-1prrqgf/package.tgz",
+  "_from": "../d-116218-28138-1prrqgf/package.tgz",
+  "_atomModuleCache": {
+    "version": 1,
+    "dependencies": [],
+    "extensions": {
+      ".js": [
+        "generate-grammar.js"
+      ],
+      ".json": [
+        "package.json"
+      ]
+    },
+    "folders": []
+  }
+}
