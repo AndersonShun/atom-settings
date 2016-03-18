@@ -1,0 +1,157 @@
+"*":
+  "aligner-python":
+    ":-leftSpace": true
+  "atom-beautify":
+    _analyticsUserId: "34acc18b-4d0d-40d8-b925-525d6290adc0"
+    python_ignore: [
+      "E127"
+      "E128"
+    ]
+    python_max_line_length: 120
+  "atom-css-comb": {}
+  "autocomplete-clang": {}
+  "autocomplete-plus": {}
+  "autocomplete-plus-python-jedi":
+    developerMode: true
+  "autocomplete-python":
+    addBracketAfterFunction: true
+    addDotAfterModule: true
+    extraPaths: "/usr/local/lib/python2.7/site-packages;/Users/ming/.pyenv/versions/fim/lib/python2.7/site-packages"
+    outputProviderErrors: true
+    pythonPath: "/usr/local/bin/python2.7"
+    useSnippets: "all"
+  "color-picker":
+    abbreviateValues: true
+    automaticReplace: true
+    preferredFormat: "HEX"
+    uppercaseColorValues: true
+  "copy-as-rtf": {}
+  core:
+    disabledPackages: [
+      "seti-icons"
+      "python-iresolve"
+      "python-isort"
+    ]
+    packagesWithKeymapsDisabled: [
+      "pigments"
+    ]
+    projectHome: "/Users/ming"
+    themes: [
+      "atom-material-ui"
+      "one-dark-syntax"
+    ]
+  editor:
+    autoIndentOnPaste: false
+    fontFamily: "Hack"
+    fontSize: 11
+    invisibles: {}
+    preferredLineLength: 120
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+  "exception-reporting":
+    userId: "8f353c8e-006a-3a35-80e3-838d380b3aeb"
+  fonts:
+    fontFamily: "Hack"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "isotope-ui": {}
+  linter:
+    clearOnChange: false
+    gutterPosition: "Left"
+    ignoredLinterErrors: [
+      "E128"
+    ]
+    lintOnChangeInterval: 100
+    lintOnSave: false
+    showErrorTabLine: true
+    showInfoMessages: true
+    statusBar: "Show error of the selected line"
+  "linter-bootlint": {}
+  "linter-pep257": {}
+  "linter-pep8":
+    ignoreErrorCodes: [
+      "E128"
+      "E129"
+    ]
+    maxLineLength: 80
+    pep8ExecutablePath: "/usr/local/bin/pep8"
+  "linter-sass-lint": {}
+  "markdown-preview-plus": {}
+  "merge-conflicts":
+    gitPath: "/usr/local/git"
+  "metro-ui":
+    themeAccentColor:
+      red: 7
+      green: 99
+      blue: 216
+      alpha: 1
+  minimap:
+    charHeight: 2.5
+    charWidth: 2
+    createPluginInDevMode: true
+    interline: 2
+    scrollAnimation: true
+  "one-dark-ui": {}
+  "one-light-ui": {}
+  pigments:
+    autocompleteScopes: [
+      ".css"
+      ".sass"
+    ]
+    extendedSearchNames: [
+      "**/*.css"
+      "**/*.sass"
+    ]
+    sortPaletteColors: "by color"
+    traverseIntoSymlinkDirectories: true
+  "preview-plus": {}
+  "python-iresolve":
+    checkOnSave: false
+    iresolveExecutablePath: "/usr/local/bin/iresolve"
+  "python-isort":
+    checkOnSave: false
+    isortPath: "/usr/local/bin/isort"
+  "python-nosetests":
+    colorfullBadges: true
+  "python-tools": {}
+  "sass-autocompile": {}
+  "sass-compiler":
+    extractPath: true
+    inputPath: "/apps/static/sass"
+    outputPath: "/apps/static/css"
+    outputStyle: "nested"
+  "terminal-panel":
+    logConsole: true
+    windowHeight: 20
+  "terminal-status": {}
+  welcome:
+    showOnStartup: false
+".console.python.text":
+  editor:
+    autoIndentOnPaste: true
+    preferredLineLength: 120
+".css.scss.source":
+  editor:
+    preferredLineLength: 120
+".jinja.source":
+  editor:
+    scrollPastEnd: true
+".python.regexp.source":
+  editor:
+    preferredLineLength: 120
+".python.source":
+  editor:
+    autoIndentOnPaste: true
+    preferredLineLength: 120
+".python.text.traceback":
+  editor:
+    preferredLineLength: 120
+".sass.source":
+  editor:
+    autoIndentOnPaste: true
+    preferredLineLength: 120
+".scss.source":
+  editor:
+    preferredLineLength: 120
