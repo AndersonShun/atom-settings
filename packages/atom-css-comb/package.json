@@ -1,8 +1,8 @@
 {
   "name": "atom-css-comb",
   "main": "./lib/css-comb",
-  "version": "2.1.0",
-  "description": "CSScomb is a coding style formatter for CSS (LESS|SASS|etc). You can easily write your own configuration to make your style sheets beautiful and consistent.",
+  "version": "3.1.0",
+  "description": "CSScomb is a coding style formatter for CSS (LESS|SASS|SCSS). You can easily write your own configuration to make your style sheets beautiful and consistent.",
   "activationCommands": {
     "atom-text-editor": [
       "css-comb:comb",
@@ -26,12 +26,12 @@
     "url": "https://github.com/jchouse/csscomb-atom/issues"
   },
   "homepage": "https://github.com/jchouse/csscomb-atom",
-  "readme": "# Csscomb package\nCSScomb is a coding style formatter for CSS.\nBased on [csscombjs 3.0](https://github.com/csscomb/csscomb.js)\n![Css Comb](https://raw.githubusercontent.com/jchouse/csscomb-atom/master/i/combed.png)\n\n## Configure\nCreate you [own config](http://csscomb.com/config)\nRead about prep [configs](https://github.com/csscomb/csscomb.js/tree/master/config)\n\n## How to use\nOpen any file and press `ctrl+alt+c`, or use context menu.\n\n## Contributors\nHaojia Che [1989car](https://github.com/1989car)\n",
+  "readme": "# Csscomb package\nCSScomb is a coding style formatter for CSS (LESS|SASS|SCSS).\n\nBased on [csscombjs 3.0](https://github.com/csscomb/csscomb.js)\n\n![Css Comb](https://raw.githubusercontent.com/jchouse/csscomb-atom/master/i/csscomb.gif)\n\n## Configure\nCreate you [own config](http://csscomb.com/config).\nRead about prep [configs](https://github.com/csscomb/csscomb.js/tree/master/config)\n\n## How to use\nOpen any file and press `ctrl+alt+c`, or use context menu.\n\n## Contributors\nHaojia Che [1989car](https://github.com/1989car)\n",
   "readmeFilename": "README.md",
-  "_id": "atom-css-comb@2.1.0",
-  "_shasum": "f33474c7d6b81245e831708969ced0ff2ea791d5",
-  "_resolved": "file:../d-115114-80009-szx66x/package.tgz",
-  "_from": "../d-115114-80009-szx66x/package.tgz",
+  "_id": "atom-css-comb@3.1.0",
+  "_shasum": "bf7fb59359b29bb4ed603a69c83722c469bb6bfd",
+  "_resolved": "file:../d-116529-53952-lhjdd7/package.tgz",
+  "_from": "../d-116529-53952-lhjdd7/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -67,7 +67,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.9",
+        "version": "0.10.11",
         "path": "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/index.js"
       },
       {
@@ -77,7 +77,7 @@
       },
       {
         "name": "es6-symbol",
-        "version": "3.0.1",
+        "version": "3.0.2",
         "path": "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/index.js"
       },
       {
@@ -112,7 +112,7 @@
       },
       {
         "name": "space-pen",
-        "version": "5.1.1",
+        "version": "5.1.2",
         "path": "node_modules/atom-space-pen-views/node_modules/space-pen/lib/space-pen.js"
       },
       {
@@ -509,6 +509,7 @@
         "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-copy-deep.js",
         "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-copy.js",
         "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-empty.js",
+        "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-number-value.js",
         "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-object.js",
         "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-plain-object.js",
         "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is.js",
@@ -1069,7 +1070,7 @@
         ],
         "dependencies": {
           "es6-iterator": "2",
-          "es6-symbol": "~3.0.1"
+          "es6-symbol": "~3.0.2"
         }
       },
       {
@@ -1092,7 +1093,7 @@
         ],
         "dependencies": {
           "d": "~0.1.1",
-          "es5-ext": "~0.10.8"
+          "es5-ext": "~0.10.10"
         }
       },
       {
@@ -1144,7 +1145,7 @@
         ],
         "dependencies": {
           "grim": "^1.0.0",
-          "jquery": "^2.1.3",
+          "jquery": "2.1.4",
           "underscore-plus": "1.x"
         }
       },

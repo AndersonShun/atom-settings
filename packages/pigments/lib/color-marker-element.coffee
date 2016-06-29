@@ -1,6 +1,7 @@
 {CompositeDisposable, Emitter} = require 'atom'
-{registerOrUpdateElement} = require 'atom-utils'
+{registerOrUpdateElement, EventsDelegation} = require 'atom-utils'
 
+SPEC_MODE = atom.inSpecMode()
 RENDERERS =
   'background': require './renderers/background'
   'outline': require './renderers/outline'
@@ -9,6 +10,8 @@ RENDERERS =
   'square-dot': require './renderers/square-dot'
 
 class ColorMarkerElement extends HTMLElement
+  EventsDelegation.includeInto(this)
+
   renderer: new RENDERERS.background
 
   createdCallback: ->
@@ -22,6 +25,8 @@ class ColorMarkerElement extends HTMLElement
   onDidRelease: (callback) ->
     @emitter.on 'did-release', callback
 
+  setContainer: (@bufferElement) ->
+
   getModel: -> @colorMarker
 
   setModel: (@colorMarker) ->
@@ -31,10 +36,20 @@ class ColorMarkerElement extends HTMLElement
     @subscriptions.add @colorMarker.marker.onDidDestroy => @release()
     @subscriptions.add @colorMarker.marker.onDidChange (data) =>
       {isValid} = data
-      if isValid then @render() else @release()
+      if isValid then @bufferElement.requestMarkerUpdate([this]) else @release()
 
     @subscriptions.add atom.config.observe 'pigments.markerType', (type) =>
-      @render() unless type is 'gutter'
+      @bufferElement.requestMarkerUpdate([this]) unless @bufferElement.useNativeDecorations()
+
+    @subscriptions.add @subscribeTo this,
+      click: (e) =>
+        colorBuffer = @colorMarker.colorBuffer
+
+        return unless colorBuffer?
+
+        colorBuffer.selectColorMarkerAndOpenPicker(@colorMarker)
+
+    @render()
 
   destroy: ->
     @parentNode?.removeChild(this)
@@ -42,11 +57,20 @@ class ColorMarkerElement extends HTMLElement
     @clear()
 
   render: ->
-    return if @colorMarker.marker.displayBuffer.isDestroyed()
-    @innerHTML = ''
-    {style, regions, class: cls} = @renderer.render(@colorMarker)
+    return unless @colorMarker? and @colorMarker.color? and @renderer?
 
-    @appendChild(region) for region in regions if regions?
+    {colorMarker, renderer, bufferElement} = this
+
+    return if bufferElement.editor.isDestroyed()
+    @innerHTML = ''
+    {style, regions, class: cls} = renderer.render(colorMarker)
+
+    regions = (regions or []).filter (r) -> r?
+
+    if regions?.some((r) -> r?.invalid) and !SPEC_MODE
+      return bufferElement.requestMarkerUpdate([this])
+
+    @appendChild(region) for region in regions
     if cls?
       @className = cls
     else
@@ -57,10 +81,10 @@ class ColorMarkerElement extends HTMLElement
     else
       @style.cssText = ''
 
-    @lastMarkerScreenRange = @colorMarker.getScreenRange()
+    @lastMarkerScreenRange = colorMarker.getScreenRange()
 
   checkScreenRange: ->
-    return unless @colorMarker?
+    return unless @colorMarker? and @lastMarkerScreenRange?
     unless @lastMarkerScreenRange.isEqual(@colorMarker.getScreenRange())
       @render()
 
@@ -85,6 +109,19 @@ module.exports =
 ColorMarkerElement =
 registerOrUpdateElement 'pigments-color-marker', ColorMarkerElement.prototype
 
+ColorMarkerElement.isNativeDecorationType = (type) ->
+  type in [
+    'gutter'
+    'native-background'
+    'native-outline'
+    'native-underline'
+    'native-dot'
+    'native-square-dot'
+  ]
+
 ColorMarkerElement.setMarkerType = (markerType) ->
-  return if markerType is 'gutter'
+  return if ColorMarkerElement.isNativeDecorationType(markerType)
+  return unless RENDERERS[markerType]?
+
+  @prototype.rendererType = markerType
   @prototype.renderer = new RENDERERS[markerType]

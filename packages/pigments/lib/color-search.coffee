@@ -1,14 +1,16 @@
-path = require 'path'
 {Emitter} = require 'atom'
 {Minimatch} = require 'minimatch'
 registry = require './color-expressions'
 ColorParser = require './color-parser'
 ColorContext = require './color-context'
+scopeFromFileName = require './scope-from-file-name'
 
 module.exports =
 class ColorSearch
-  constructor: (options={}) ->
-    {@sourceNames, ignoredNames, @context} = options
+  @deserialize: (state) -> new ColorSearch(state.options)
+
+  constructor: (@options={}) ->
+    {@sourceNames, ignoredNames, @context} = @options
     @emitter = new Emitter
     @context ?= new ColorContext({registry})
     @parser = @context.parser
@@ -23,6 +25,12 @@ class ColorSearch
       catch error
         console.warn "Error parsing ignore pattern (#{ignore}): #{error.message}"
 
+  getTitle: -> 'Pigments Find Results'
+
+  getURI: -> 'pigments://search'
+
+  getIconName: -> "pigments"
+
   onDidFindMatches: (callback) ->
     @emitter.on 'did-find-matches', callback
 
@@ -35,7 +43,7 @@ class ColorSearch
 
     promise = atom.workspace.scan re, paths: @sourceNames, (m) =>
       relativePath = atom.project.relativize(m.filePath)
-      scope = path.extname(relativePath)
+      scope = scopeFromFileName(relativePath)
       return if @isIgnored(relativePath)
 
       newMatches = []
@@ -66,3 +74,9 @@ class ColorSearch
   isIgnored: (relativePath) ->
     for ignoredName in @ignoredNames
       return true if ignoredName.match(relativePath)
+
+  serialize: ->
+    {
+      deserializer: 'ColorSearch'
+      @options
+    }

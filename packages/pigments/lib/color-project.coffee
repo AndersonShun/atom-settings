@@ -1,5 +1,5 @@
-{Emitter, CompositeDisposable, Range} = require 'atom'
 minimatch = require 'minimatch'
+{Emitter, CompositeDisposable, Range} = require 'atom'
 
 {SERIALIZE_VERSION, SERIALIZE_MARKERS_VERSION} = require './versions'
 {THEME_VARIABLES} = require './uris'
@@ -87,6 +87,8 @@ module.exports =
 class ColorProject
   @deserialize: (state) ->
     markersVersion = SERIALIZE_MARKERS_VERSION
+    markersVersion += '-dev' if atom.inDevMode() and atom.project.getPaths().some (p) -> p.match(/\/pigments$/)
+
     if state?.version isnt SERIALIZE_VERSION
       state = {}
 
@@ -108,6 +110,7 @@ class ColorProject
     @emitter = new Emitter
     @subscriptions = new CompositeDisposable
     @colorBuffersByEditorId = {}
+    @bufferStates = buffers ? {}
 
     @variableExpressionsRegistry = require './variable-expressions'
     @colorExpressionsRegistry = require './color-expressions'
@@ -126,6 +129,9 @@ class ColorProject
     @subscriptions.add atom.config.observe 'pigments.ignoredNames', =>
       @updatePaths()
 
+    @subscriptions.add atom.config.observe 'pigments.ignoredBufferNames', (@ignoredBufferNames) =>
+      @updateColorBuffers()
+
     @subscriptions.add atom.config.observe 'pigments.ignoredScopes', =>
       @emitter.emit('did-change-ignored-scopes', @getIgnoredScopes())
 
@@ -139,6 +145,15 @@ class ColorProject
     @subscriptions.add atom.config.observe 'pigments.ignoreVcsIgnoredPaths', =>
       @loadPathsAndVariables()
 
+    svgColorExpression = @colorExpressionsRegistry.getExpression('pigments:named_colors')
+    defaultScopes = svgColorExpression.scopes.slice()
+    @subscriptions.add atom.config.observe 'pigments.extendedFiletypesForColorWords', (scopes) =>
+      svgColorExpression.scopes = defaultScopes.concat(scopes)
+      @colorExpressionsRegistry.emitter.emit 'did-update-expressions', {
+        name: svgColorExpression.name
+        registry: @colorExpressionsRegistry
+      }
+
     @subscriptions.add @colorExpressionsRegistry.onDidUpdateExpressions ({name}) =>
       return if not @paths? or name is 'pigments:variables'
       @variables.evaluateVariables(@variables.getVariables())
@@ -147,8 +162,6 @@ class ColorProject
     @subscriptions.add @variableExpressionsRegistry.onDidUpdateExpressions =>
       return unless @paths?
       @reloadVariablesForPaths(@getPaths())
-
-    @bufferStates = buffers ? {}
 
     @timestamp = new Date(Date.parse(timestamp)) if timestamp?
 
@@ -255,6 +268,8 @@ class ColorProject
       ignoredNames: @getIgnoredNames()
       context: @getContext()
 
+  setColorPickerAPI: (@colorPickerAPI) ->
+
   ##    ########  ##     ## ######## ######## ######## ########   ######
   ##    ##     ## ##     ## ##       ##       ##       ##     ## ##    ##
   ##    ##     ## ##     ## ##       ##       ##       ##     ## ##
@@ -263,12 +278,19 @@ class ColorProject
   ##    ##     ## ##     ## ##       ##       ##       ##    ##  ##    ##
   ##    ########   #######  ##       ##       ######## ##     ##  ######
 
-  initializeBuffers: (buffers) ->
+  initializeBuffers: ->
     @subscriptions.add atom.workspace.observeTextEditors (editor) =>
+      editorPath = editor.getPath()
+      return if not editorPath? or @isBufferIgnored(editorPath)
+
       buffer = @colorBufferForEditor(editor)
       if buffer?
         bufferElement = atom.views.getView(buffer)
         bufferElement.attach()
+
+  hasColorBufferForEditor: (editor) ->
+    return false if @destroyed or not editor?
+    @colorBuffersByEditorId[editor.id]?
 
   colorBufferForEditor: (editor) ->
     return if @destroyed
@@ -299,6 +321,31 @@ class ColorProject
     for id,colorBuffer of @colorBuffersByEditorId
       return colorBuffer if colorBuffer.editor.getPath() is path
 
+  updateColorBuffers: ->
+    for id, buffer of @colorBuffersByEditorId
+      if @isBufferIgnored(buffer.editor.getPath())
+        buffer.destroy()
+        delete @colorBuffersByEditorId[id]
+
+    try
+      if @colorBuffersByEditorId?
+        for editor in atom.workspace.getTextEditors()
+          continue if @hasColorBufferForEditor(editor) or @isBufferIgnored(editor.getPath())
+
+          buffer = @colorBufferForEditor(editor)
+          if buffer?
+            bufferElement = atom.views.getView(buffer)
+            bufferElement.attach()
+
+    catch e
+      console.log e
+
+  isBufferIgnored: (path) ->
+    path = atom.project.relativize(path)
+    sources = @ignoredBufferNames ? []
+    return true for source in sources when minimatch(path, source, matchBase: true, dot: true)
+    false
+
   ##    ########     ###    ######## ##     ##  ######
   ##    ##     ##   ## ##      ##    ##     ## ##    ##
   ##    ##     ##  ##   ##     ##    ##     ## ##
@@ -310,6 +357,8 @@ class ColorProject
   getPaths: -> @paths?.slice()
 
   appendPath: (path) -> @paths.push(path) if path?
+
+  hasPath: (path) -> path in (@paths ? [])
 
   loadPaths: (noKnownPaths=false) ->
     new Promise (resolve, reject) =>
@@ -514,7 +563,8 @@ class ColorProject
       if /\/\*$/.test(p) then p + '*' else p
 
   setIgnoredNames: (@ignoredNames=[]) ->
-    return if not @initialized? and not @initializePromise?
+    if not @initialized? and not @initializePromise?
+      return Promise.reject('Project is not initialized yet')
 
     @initialize().then =>
       dirtied = @paths.filter (p) => @isIgnoredPath(p)

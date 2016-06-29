@@ -42,7 +42,7 @@ class MarkdownPreviewView extends ScrollView
 
   serialize: ->
     deserializer: 'MarkdownPreviewView'
-    filePath: @getPath()
+    filePath: @getPath() ? @filePath
     editorId: @editorId
 
   destroy: ->
@@ -161,7 +161,7 @@ class MarkdownPreviewView extends ScrollView
     @getMarkdownSource().then (source) => @renderMarkdownText(source) if source?
 
   getMarkdownSource: ->
-    if @file?
+    if @file?.getPath()
       @file.read()
     else if @editor?
       Promise.resolve(@editor.getText())
@@ -221,11 +221,9 @@ class MarkdownPreviewView extends ScrollView
   getTextEditorStyles: ->
 
     textEditorStyles = document.createElement("atom-styles")
+    textEditorStyles.initialize(atom.styles)
     textEditorStyles.setAttribute "context", "atom-text-editor"
     document.body.appendChild textEditorStyles
-
-    # Force styles injection
-    textEditorStyles.initialize()
 
     # Extract style elements content
     Array.prototype.slice.apply(textEditorStyles.childNodes).map (styleElement) ->

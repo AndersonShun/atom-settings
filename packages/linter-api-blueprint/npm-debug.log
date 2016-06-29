@@ -1,0 +1,176 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Applications/Atom.app/Contents/Resources/app/apm/bin/node',
+1 verbose cli   '/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/bin/npm-cli.js',
+1 verbose cli   '--globalconfig',
+1 verbose cli   '/Users/ming/.atom/.apm/.apmrc',
+1 verbose cli   '--userconfig',
+1 verbose cli   '/Users/ming/.atom/.apmrc',
+1 verbose cli   'rebuild',
+1 verbose cli   '--target=0.36.8',
+1 verbose cli   '--arch=x64' ]
+2 info using npm@2.13.3
+3 info using node@v0.10.40
+4 info readInstalled object
+5 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint',
+5 verbose rebuild   'linter-api-blueprint@0.4.0' ]
+6 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter',
+6 verbose rebuild   'atom-linter@4.6.1' ]
+7 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/consistent-env',
+7 verbose rebuild   'consistent-env@1.1.2' ]
+8 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/named-js-regexp',
+8 verbose rebuild   'named-js-regexp@1.3.1' ]
+9 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/sb-promisify',
+9 verbose rebuild   'sb-promisify@1.1.1' ]
+10 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/tmp',
+10 verbose rebuild   'tmp@0.0.28' ]
+11 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/tmp/node_modules/os-tmpdir',
+11 verbose rebuild   'os-tmpdir@1.0.1' ]
+12 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps',
+12 verbose rebuild   'atom-package-deps@3.0.9' ]
+13 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps/node_modules/atom-package-path',
+13 verbose rebuild   'atom-package-path@1.1.0' ]
+14 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps/node_modules/atom-package-path/node_modules/sb-callsite',
+14 verbose rebuild   'sb-callsite@1.1.2' ]
+15 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/protagonist',
+15 verbose rebuild   'protagonist@1.2.6' ]
+16 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/protagonist/node_modules/nan',
+16 verbose rebuild   'nan@2.0.9' ]
+17 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/refract-query',
+17 verbose rebuild   'refract-query@0.0.1' ]
+18 verbose rebuild path, id [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/refract-query/node_modules/lodash',
+18 verbose rebuild   'lodash@3.10.1' ]
+19 silly rebuild set [ '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/consistent-env',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/named-js-regexp',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/sb-promisify',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/tmp',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/tmp/node_modules/os-tmpdir',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps/node_modules/atom-package-path',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps/node_modules/atom-package-path/node_modules/sb-callsite',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/protagonist',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/protagonist/node_modules/nan',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/refract-query',
+19 silly rebuild set   '/Users/ming/.atom/packages/linter-api-blueprint/node_modules/refract-query/node_modules/lodash' ]
+20 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter
+21 info preinstall atom-linter@4.6.1
+22 info linkStuff atom-linter@4.6.1
+23 silly linkStuff atom-linter@4.6.1 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules as its parent node_modules
+24 verbose linkBins atom-linter@4.6.1
+25 verbose linkMans atom-linter@4.6.1
+26 verbose rebuildBundles atom-linter@4.6.1
+27 verbose rebuildBundles [ 'consistent-env', 'named-js-regexp', 'sb-promisify', 'tmp' ]
+28 info install atom-linter@4.6.1
+29 info postinstall atom-linter@4.6.1
+30 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/consistent-env
+31 info preinstall consistent-env@1.1.2
+32 info linkStuff consistent-env@1.1.2
+33 silly linkStuff consistent-env@1.1.2 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules as its parent node_modules
+34 verbose linkBins consistent-env@1.1.2
+35 verbose linkMans consistent-env@1.1.2
+36 verbose rebuildBundles consistent-env@1.1.2
+37 info install consistent-env@1.1.2
+38 info postinstall consistent-env@1.1.2
+39 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/named-js-regexp
+40 info preinstall named-js-regexp@1.3.1
+41 info linkStuff named-js-regexp@1.3.1
+42 silly linkStuff named-js-regexp@1.3.1 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules as its parent node_modules
+43 verbose linkBins named-js-regexp@1.3.1
+44 verbose linkMans named-js-regexp@1.3.1
+45 verbose rebuildBundles named-js-regexp@1.3.1
+46 info install named-js-regexp@1.3.1
+47 info postinstall named-js-regexp@1.3.1
+48 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/sb-promisify
+49 info preinstall sb-promisify@1.1.1
+50 info linkStuff sb-promisify@1.1.1
+51 silly linkStuff sb-promisify@1.1.1 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules as its parent node_modules
+52 verbose linkBins sb-promisify@1.1.1
+53 verbose linkMans sb-promisify@1.1.1
+54 verbose rebuildBundles sb-promisify@1.1.1
+55 info install sb-promisify@1.1.1
+56 info postinstall sb-promisify@1.1.1
+57 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/tmp
+58 info preinstall tmp@0.0.28
+59 info linkStuff tmp@0.0.28
+60 silly linkStuff tmp@0.0.28 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules as its parent node_modules
+61 verbose linkBins tmp@0.0.28
+62 verbose linkMans tmp@0.0.28
+63 verbose rebuildBundles tmp@0.0.28
+64 verbose rebuildBundles [ 'os-tmpdir' ]
+65 info install tmp@0.0.28
+66 info postinstall tmp@0.0.28
+67 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/tmp/node_modules/os-tmpdir
+68 info preinstall os-tmpdir@1.0.1
+69 info linkStuff os-tmpdir@1.0.1
+70 silly linkStuff os-tmpdir@1.0.1 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-linter/node_modules/tmp/node_modules as its parent node_modules
+71 verbose linkBins os-tmpdir@1.0.1
+72 verbose linkMans os-tmpdir@1.0.1
+73 verbose rebuildBundles os-tmpdir@1.0.1
+74 info install os-tmpdir@1.0.1
+75 info postinstall os-tmpdir@1.0.1
+76 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps
+77 info preinstall atom-package-deps@3.0.9
+78 info linkStuff atom-package-deps@3.0.9
+79 silly linkStuff atom-package-deps@3.0.9 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules as its parent node_modules
+80 verbose linkBins atom-package-deps@3.0.9
+81 verbose linkMans atom-package-deps@3.0.9
+82 verbose rebuildBundles atom-package-deps@3.0.9
+83 verbose rebuildBundles [ 'atom-package-path' ]
+84 info install atom-package-deps@3.0.9
+85 info postinstall atom-package-deps@3.0.9
+86 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps/node_modules/atom-package-path
+87 info preinstall atom-package-path@1.1.0
+88 info linkStuff atom-package-path@1.1.0
+89 silly linkStuff atom-package-path@1.1.0 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps/node_modules as its parent node_modules
+90 verbose linkBins atom-package-path@1.1.0
+91 verbose linkMans atom-package-path@1.1.0
+92 verbose rebuildBundles atom-package-path@1.1.0
+93 verbose rebuildBundles [ 'sb-callsite' ]
+94 info install atom-package-path@1.1.0
+95 info postinstall atom-package-path@1.1.0
+96 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps/node_modules/atom-package-path/node_modules/sb-callsite
+97 info preinstall sb-callsite@1.1.2
+98 info linkStuff sb-callsite@1.1.2
+99 silly linkStuff sb-callsite@1.1.2 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules/atom-package-deps/node_modules/atom-package-path/node_modules as its parent node_modules
+100 verbose linkBins sb-callsite@1.1.2
+101 verbose linkMans sb-callsite@1.1.2
+102 verbose rebuildBundles sb-callsite@1.1.2
+103 info install sb-callsite@1.1.2
+104 info postinstall sb-callsite@1.1.2
+105 info build /Users/ming/.atom/packages/linter-api-blueprint/node_modules/protagonist
+106 info preinstall protagonist@1.2.6
+107 info linkStuff protagonist@1.2.6
+108 silly linkStuff protagonist@1.2.6 has /Users/ming/.atom/packages/linter-api-blueprint/node_modules as its parent node_modules
+109 verbose linkBins protagonist@1.2.6
+110 verbose linkMans protagonist@1.2.6
+111 verbose rebuildBundles protagonist@1.2.6
+112 verbose rebuildBundles [ 'nan' ]
+113 info install protagonist@1.2.6
+114 verbose unsafe-perm in lifecycle true
+115 info protagonist@1.2.6 Failed to exec install script
+116 verbose stack Error: protagonist@1.2.6 install: `node-gyp rebuild`
+116 verbose stack Exit status 1
+116 verbose stack     at EventEmitter.<anonymous> (/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/lib/utils/lifecycle.js:214:16)
+116 verbose stack     at EventEmitter.emit (events.js:98:17)
+116 verbose stack     at ChildProcess.<anonymous> (/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/lib/utils/spawn.js:24:14)
+116 verbose stack     at ChildProcess.emit (events.js:98:17)
+116 verbose stack     at maybeClose (child_process.js:766:16)
+116 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:833:5)
+117 verbose pkgid protagonist@1.2.6
+118 verbose cwd /Users/ming/.atom/packages/linter-api-blueprint
+119 error Darwin 15.4.0
+120 error argv "/Applications/Atom.app/Contents/Resources/app/apm/bin/node" "/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/bin/npm-cli.js" "--globalconfig" "/Users/ming/.atom/.apm/.apmrc" "--userconfig" "/Users/ming/.atom/.apmrc" "rebuild" "--target=0.36.8" "--arch=x64"
+121 error node v0.10.40
+122 error npm  v2.13.3
+123 error code ELIFECYCLE
+124 error protagonist@1.2.6 install: `node-gyp rebuild`
+124 error Exit status 1
+125 error Failed at the protagonist@1.2.6 install script 'node-gyp rebuild'.
+125 error This is most likely a problem with the protagonist package,
+125 error not with npm itself.
+125 error Tell the author that this fails on your system:
+125 error     node-gyp rebuild
+125 error You can get their info via:
+125 error     npm owner ls protagonist
+125 error There is likely additional logging output above.
+126 verbose exit [ 1, true ]

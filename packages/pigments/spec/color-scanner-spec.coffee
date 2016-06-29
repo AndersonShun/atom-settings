@@ -108,3 +108,33 @@ describe 'ColorScanner', ->
 
           it 'has a color', ->
             expect(result.color).toBeColor('#BF616A')
+
+      withScannerForTextEditor 'crlf.styl', ->
+        beforeEach ->
+          result = scanner.search(text, 'styl')
+
+        it 'returns the first buffer color match', ->
+          expect(result).toBeDefined()
+
+        describe 'the resulting buffer color', ->
+          it 'has a text range', ->
+            expect(result.range).toEqual([7,11])
+
+          it 'has a color', ->
+            expect(result.color).toBeColor('#ffffff')
+
+        it 'finds the second color', ->
+          doSearch = -> result = scanner.search(text, 'styl', result.lastIndex)
+
+          doSearch()
+
+          expect(result.color).toBeDefined()
+
+      withScannerForTextEditor 'color-in-tag-content.html', ->
+        it 'finds both colors', ->
+          result = lastIndex: 0
+          doSearch = -> result = scanner.search(text, 'css', result.lastIndex)
+
+          expect(doSearch()).toBeDefined()
+          expect(doSearch()).toBeDefined()
+          expect(doSearch()).toBeUndefined()

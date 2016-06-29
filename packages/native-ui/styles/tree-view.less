@@ -47,8 +47,24 @@
 }
 
 .tree-view-resizer {
+	border-right: 1px solid @tab-bar-border-color;
+
+	.is-blurred & {
+		opacity: @opacity-blurred;
+	}
+
+	// Make the resizing easier
 	.tree-view-resize-handle {
-		width: 8px;
+		width: 10px;
+		transition: all @transition--default;
+
+		&:hover {
+			background: @resize-handle-color-hover;
+		}
+
+		&:active {
+			background: @resize-handle-color-active;
+		}
 	}
 }
 
@@ -171,9 +187,21 @@
 	line-height: @height__list-item;
 }
 
+
+
+// Ignored tree view items
+
 .list-tree.has-collapsable-children .list-nested-item.collapsed.status-ignored > .list-item::before {
 	color: @text-color-ignored;
 }
+
+.list-group li:not(.list-nested-item).status-ignored,
+.list-tree li:not(.list-nested-item).status-ignored,
+.list-group li.list-nested-item.status-ignored > .list-item, .list-tree li.list-nested-item.status-ignored > .list-item {
+	color: @text-color-ignored;
+}
+
+
 
 // Remove repo icon and display the text in bold
 .project-root > .list-item > .icon-repo {
@@ -182,4 +210,21 @@
 	&:before {
 		display: none;
 	}
+}
+
+
+
+// Use Octicons that match the OSX finder more
+
+.list-tree.has-collapsable-children .list-nested-item > .list-item::before {
+	content: "▶";
+	font-size: 9px;
+	transform: rotate(90deg);
+	transform-origin: 30% 30%;
+}
+
+.list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before {
+	content: "▶";
+	font-size: 9px;
+	transform: none;
 }

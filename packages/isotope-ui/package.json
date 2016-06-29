@@ -2,7 +2,7 @@
   "name": "isotope-ui",
   "main": "lib/isotope-ui",
   "theme": "ui",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "A clean and configurable UI theme.",
   "license": "MIT",
   "repository": {
@@ -25,10 +25,10 @@
     "url": "https://github.com/braver/isotope-ui/issues"
   },
   "homepage": "https://github.com/braver/isotope-ui#readme",
-  "_id": "isotope-ui@2.7.0",
-  "_shasum": "0d560c5dfd4bedd35e2384f1a3e9b99652739292",
-  "_resolved": "file:../d-115114-79084-15ymb2u/package.tgz",
-  "_from": "../d-115114-79084-15ymb2u/package.tgz",
+  "_id": "isotope-ui@2.7.1",
+  "_shasum": "c081b39d8a1f1e1c4474d7848827fa16030bbd13",
+  "_resolved": "file:../d-116529-54022-k697ob/package.tgz",
+  "_from": "../d-116529-54022-k697ob/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],

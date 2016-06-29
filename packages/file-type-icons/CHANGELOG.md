@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## **v1.3.0** &mdash; *Released: 15 May 2016*
+
+* [PR #31](https://github.com/lee-dohm/file-type-icons/pull/31) by [@swrobel](https://github.com/swrobel) - Files ending in `test.rb` should be considered tests
+* [PR #35](https://github.com/lee-dohm/file-type-icons/pull/35) by [@swrobel](https://github.com/swrobel) - Factory icon
+
+## **v1.2.0** &mdash; *Released: 25 April 2016*
+
+* [#29](https://github.com/lee-dohm/file-type-icons/issues/29) - Add files beginning with `.` to list of in-project configuration files
+* [#30](https://github.com/lee-dohm/file-type-icons/issues/30) - Add `.pug` to list of template files
+
+## **v1.1.0** &mdash; *Released: 24 April 2016*
+
+* [PR #34](https://github.com/lee-dohm/file-type-icons/pull/34) by [@swrobel](https://github.com/swrobel) - Add ReactJS icons
+* [#27](https://github.com/lee-dohm/file-type-icons/issues/27) - Fix misalignment of folder and repo icons in default themes
+
+## **v1.0.1** &mdash; *Released: 19 March 2016*
+
+* Fix stuff that got broken in the fix for Nuclide
+
+## **v1.0.0** &mdash; *Released: 18 March 2016*
+
+* [#26](https://github.com/lee-dohm/file-type-icons/issues/26) &mdash; Fix doubled icons and misalignment on Nuclide tree view
+
 ## **v0.7.4** &mdash; *Released: 13 November 2015*
 
 * PR [#24](https://github.com/lee-dohm/file-type-icons/pull/24) by [@tonatiuh](https://github.com/tonatiuh)

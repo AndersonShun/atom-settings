@@ -1,3 +1,24 @@
+## 0.9.4
+* Avoid excluding autocomplete-plus suggestions
+* Improve performance
+
+## 0.9.3
+* Fix missing require
+
+## 0.9.2
+* Fix buildGoDeclarationCommandArgs
+
+## 0.9.1
+* Fix missing dependency
+
+## 0.9.0
+* Add "autocomplete-clang:go-declaration" command (#92)
+* Fix many bugs and improve output (#96, #99, #100)
+
+## 0.8.9
+* Add check for autocomplete-plus minimumWordLength
+* Add current directory to include path
+
 ## 0.8.8
 * Add support for showing brief documentation comments
 * Fix loading std config

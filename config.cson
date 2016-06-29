@@ -31,6 +31,8 @@
       "seti-icons"
       "python-iresolve"
       "python-isort"
+      "spell-check"
+      "terminal-panel"
     ]
     packagesWithKeymapsDisabled: [
       "pigments"
@@ -79,6 +81,9 @@
     pep8ExecutablePath: "/usr/local/bin/pep8"
   "linter-sass-lint": {}
   "markdown-preview-plus": {}
+  "markdown-writer":
+    fileExtension: ".markdown, .md"
+    relativeImagePath: true
   "merge-conflicts":
     gitPath: "/usr/local/git"
   "metro-ui":
@@ -122,10 +127,17 @@
     inputPath: "/apps/static/sass"
     outputPath: "/apps/static/css"
     outputStyle: "nested"
+  "spell-check": {}
   "terminal-panel":
+    clearCommandInput: false
     logConsole: true
     windowHeight: 20
+  "terminal-plus":
+    core: {}
+    style: {}
   "terminal-status": {}
+  "tool-bar":
+    position: "Left"
   welcome:
     showOnStartup: false
 ".console.python.text":
@@ -135,6 +147,10 @@
 ".css.scss.source":
   editor:
     preferredLineLength: 120
+".diff.source":
+  editor:
+    preferredLineLength: 120
+    tabLength: 4
 ".jinja.source":
   editor:
     scrollPastEnd: true

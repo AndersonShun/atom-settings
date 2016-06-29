@@ -1,7 +1,7 @@
 {
   "name": "sass-watch",
   "main": "./lib/sass-watch",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Watch a SASS file and compile to CSS",
   "repository": {
     "type": "git",
@@ -19,16 +19,16 @@
     "underscore-plus": "1.x",
     "season": "^4"
   },
-  "readme": "# Sass Watch [![Build Status](https://travis-ci.org/Arcath/sass-watch.svg)](https://travis-ci.org/Arcath/sass-watch)\n\nWatches your [SASS] files and compiles them when you save!\n\n## Watching a File\n\n`alt-cmd-S` or `Sass Watch: Watch` brings up the confirm output screen where you specify the sass compiles to. Hit enter and thats it, Sass Watch will watch the file for changes and compile the css to the supplied output.\n\n## Viewing Watchers\n\n`Sass Watch: List` brings up a list of watchers. Select a watcher from the list and you will be given some details about the watcher, from here you can stop the watcher.\n\n## Behind the Scenes\n\nSass Watch binds to the save event in [Atom] which saves running any kind of filesystem watcher and means that your file is only re-compiled if _you_ save it in Atom instead of anything on your system touching the file.\n\n[SASS]: http://sass-lang.com/\n[Atom]: http://atom.io\n",
+  "readme": "# Deprecated\n\nsass-watch has been replaced with a new compiler that supports __any__ format.\n\nSee [compile-watch](https://atom.io/packages/compile-watch) ([source](https://github.com/Arcath/compile-watch))\n",
   "readmeFilename": "README.markdown",
   "bugs": {
     "url": "https://github.com/arcath/sass-watch/issues"
   },
   "homepage": "https://github.com/arcath/sass-watch#readme",
-  "_id": "sass-watch@0.3.1",
-  "_shasum": "be70b3ed7b2b292085ed2635bdf1a2c872db15ca",
-  "_resolved": "file:../d-1151117-47886-12ii49z/package.tgz",
-  "_from": "../d-1151117-47886-12ii49z/package.tgz",
+  "_id": "sass-watch@0.3.2",
+  "_shasum": "1ec12515a68d4a8ac33d433eac3ea4176c419f49",
+  "_resolved": "file:../d-116529-54116-1dt7fot/package.tgz",
+  "_from": "../d-116529-54116-1dt7fot/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -59,7 +59,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.10",
+        "version": "0.10.11",
         "path": "node_modules/atom-space-pen-views/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/index.js"
       },
       {
@@ -94,7 +94,7 @@
       },
       {
         "name": "fs-plus",
-        "version": "2.8.1",
+        "version": "2.9.1",
         "path": "node_modules/fs-plus/lib/fs-plus.js"
       },
       {
@@ -129,7 +129,7 @@
       },
       {
         "name": "escape-string-regexp",
-        "version": "1.0.3",
+        "version": "1.0.5",
         "path": "node_modules/node-sass/node_modules/chalk/node_modules/escape-string-regexp/index.js"
       },
       {
@@ -284,7 +284,7 @@
       },
       {
         "name": "mocha",
-        "version": "2.3.4",
+        "version": "2.5.3",
         "path": "node_modules/node-sass/node_modules/mocha/index.js"
       },
       {
@@ -314,13 +314,8 @@
       },
       {
         "name": "glob",
-        "version": "3.2.3",
+        "version": "3.2.11",
         "path": "node_modules/node-sass/node_modules/mocha/node_modules/glob/glob.js"
-      },
-      {
-        "name": "graceful-fs",
-        "version": "2.0.3",
-        "path": "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/graceful-fs/graceful-fs.js"
       },
       {
         "name": "inherits",
@@ -329,7 +324,7 @@
       },
       {
         "name": "minimatch",
-        "version": "0.2.14",
+        "version": "0.3.0",
         "path": "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/minimatch/minimatch.js"
       },
       {
@@ -344,7 +339,7 @@
       },
       {
         "name": "growl",
-        "version": "1.8.1",
+        "version": "1.9.2",
         "path": "node_modules/node-sass/node_modules/mocha/node_modules/growl/lib/growl.js"
       },
       {
@@ -363,19 +358,14 @@
         "path": "node_modules/node-sass/node_modules/mocha/node_modules/jade/node_modules/mkdirp/index.js"
       },
       {
-        "name": "mkdirp",
-        "version": "0.5.0",
-        "path": "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/index.js"
-      },
-      {
-        "name": "minimist",
-        "version": "0.0.8",
-        "path": "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/node_modules/minimist/index.js"
-      },
-      {
         "name": "supports-color",
         "version": "1.2.0",
         "path": "node_modules/node-sass/node_modules/mocha/node_modules/supports-color/index.js"
+      },
+      {
+        "name": "to-iso-string",
+        "version": "0.0.2",
+        "path": "node_modules/node-sass/node_modules/mocha/node_modules/to-iso-string/index.js"
       },
       {
         "name": "nan",
@@ -394,7 +384,7 @@
       },
       {
         "name": "request",
-        "version": "2.67.0",
+        "version": "2.72.0",
         "path": "node_modules/node-sass/node_modules/request/index.js"
       },
       {
@@ -403,13 +393,18 @@
         "path": "node_modules/node-sass/node_modules/request/node_modules/aws-sign2/index.js"
       },
       {
+        "name": "aws4",
+        "version": "1.4.1",
+        "path": "node_modules/node-sass/node_modules/request/node_modules/aws4/aws4.js"
+      },
+      {
         "name": "bl",
-        "version": "1.0.0",
+        "version": "1.1.2",
         "path": "node_modules/node-sass/node_modules/request/node_modules/bl/bl.js"
       },
       {
         "name": "readable-stream",
-        "version": "2.0.5",
+        "version": "2.0.6",
         "path": "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/readable.js"
       },
       {
@@ -424,12 +419,12 @@
       },
       {
         "name": "isarray",
-        "version": "0.0.1",
+        "version": "1.0.0",
         "path": "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/index.js"
       },
       {
         "name": "process-nextick-args",
-        "version": "1.0.6",
+        "version": "1.0.7",
         "path": "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args/index.js"
       },
       {
@@ -469,32 +464,32 @@
       },
       {
         "name": "form-data",
-        "version": "1.0.0-rc3",
+        "version": "1.0.0-rc4",
         "path": "node_modules/node-sass/node_modules/request/node_modules/form-data/lib/form_data.js"
       },
       {
         "name": "async",
-        "version": "1.5.0",
+        "version": "1.5.2",
         "path": "node_modules/node-sass/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js"
       },
       {
         "name": "har-validator",
-        "version": "2.0.3",
+        "version": "2.0.6",
         "path": "node_modules/node-sass/node_modules/request/node_modules/har-validator/lib/index.js"
       },
       {
         "name": "chalk",
-        "version": "1.1.1",
+        "version": "1.1.3",
         "path": "node_modules/node-sass/node_modules/request/node_modules/har-validator/node_modules/chalk/index.js"
       },
       {
         "name": "ansi-styles",
-        "version": "2.1.0",
+        "version": "2.2.1",
         "path": "node_modules/node-sass/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/ansi-styles/index.js"
       },
       {
         "name": "escape-string-regexp",
-        "version": "1.0.3",
+        "version": "1.0.5",
         "path": "node_modules/node-sass/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/escape-string-regexp/index.js"
       },
       {
@@ -509,7 +504,7 @@
       },
       {
         "name": "strip-ansi",
-        "version": "3.0.0",
+        "version": "3.0.1",
         "path": "node_modules/node-sass/node_modules/request/node_modules/har-validator/node_modules/chalk/node_modules/strip-ansi/index.js"
       },
       {
@@ -534,7 +529,7 @@
       },
       {
         "name": "is-my-json-valid",
-        "version": "2.12.3",
+        "version": "2.13.1",
         "path": "node_modules/node-sass/node_modules/request/node_modules/har-validator/node_modules/is-my-json-valid/index.js"
       },
       {
@@ -564,17 +559,17 @@
       },
       {
         "name": "pinkie-promise",
-        "version": "2.0.0",
+        "version": "2.0.1",
         "path": "node_modules/node-sass/node_modules/request/node_modules/har-validator/node_modules/pinkie-promise/index.js"
       },
       {
         "name": "pinkie",
-        "version": "2.0.1",
+        "version": "2.0.4",
         "path": "node_modules/node-sass/node_modules/request/node_modules/har-validator/node_modules/pinkie-promise/node_modules/pinkie/index.js"
       },
       {
         "name": "hawk",
-        "version": "3.1.2",
+        "version": "3.1.3",
         "path": "node_modules/node-sass/node_modules/request/node_modules/hawk/lib/index.js"
       },
       {
@@ -599,17 +594,17 @@
       },
       {
         "name": "http-signature",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/lib/index.js"
       },
       {
         "name": "assert-plus",
-        "version": "0.1.5",
+        "version": "0.2.0",
         "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/assert-plus/assert.js"
       },
       {
         "name": "jsprim",
-        "version": "1.2.2",
+        "version": "1.3.0",
         "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/jsprim/lib/jsprim.js"
       },
       {
@@ -629,7 +624,7 @@
       },
       {
         "name": "sshpk",
-        "version": "1.7.1",
+        "version": "1.8.3",
         "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/lib/index.js"
       },
       {
@@ -639,23 +634,23 @@
       },
       {
         "name": "assert-plus",
-        "version": "0.2.0",
+        "version": "1.0.0",
         "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/assert-plus/assert.js"
       },
       {
         "name": "dashdash",
-        "version": "1.10.1",
+        "version": "1.14.0",
         "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/lib/dashdash.js"
-      },
-      {
-        "name": "assert-plus",
-        "version": "0.1.5",
-        "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/node_modules/assert-plus/assert.js"
       },
       {
         "name": "ecc-jsbn",
         "version": "0.1.1",
         "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/ecc-jsbn/index.js"
+      },
+      {
+        "name": "getpass",
+        "version": "0.1.6",
+        "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/getpass/lib/index.js"
       },
       {
         "name": "jodid25519",
@@ -669,7 +664,7 @@
       },
       {
         "name": "tweetnacl",
-        "version": "0.13.2",
+        "version": "0.13.3",
         "path": "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/tweetnacl/nacl-fast.js"
       },
       {
@@ -689,12 +684,12 @@
       },
       {
         "name": "mime-types",
-        "version": "2.1.8",
+        "version": "2.1.11",
         "path": "node_modules/node-sass/node_modules/request/node_modules/mime-types/index.js"
       },
       {
         "name": "mime-db",
-        "version": "1.20.0",
+        "version": "1.23.0",
         "path": "node_modules/node-sass/node_modules/request/node_modules/mime-types/node_modules/mime-db/index.js"
       },
       {
@@ -704,12 +699,12 @@
       },
       {
         "name": "oauth-sign",
-        "version": "0.8.0",
+        "version": "0.8.2",
         "path": "node_modules/node-sass/node_modules/request/node_modules/oauth-sign/index.js"
       },
       {
         "name": "qs",
-        "version": "5.2.0",
+        "version": "6.1.0",
         "path": "node_modules/node-sass/node_modules/request/node_modules/qs/lib/index.js"
       },
       {
@@ -719,12 +714,12 @@
       },
       {
         "name": "tough-cookie",
-        "version": "2.2.1",
+        "version": "2.2.2",
         "path": "node_modules/node-sass/node_modules/request/node_modules/tough-cookie/lib/cookie.js"
       },
       {
         "name": "tunnel-agent",
-        "version": "0.4.2",
+        "version": "0.4.3",
         "path": "node_modules/node-sass/node_modules/request/node_modules/tunnel-agent/index.js"
       },
       {
@@ -784,7 +779,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.10",
+        "version": "0.10.11",
         "path": "node_modules/space-pen/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/index.js"
       },
       {
@@ -1340,7 +1335,6 @@
         "node_modules/node-sass/node_modules/mocha/bin/options.js",
         "node_modules/node-sass/node_modules/mocha/index.js",
         "node_modules/node-sass/node_modules/mocha/lib/browser/debug.js",
-        "node_modules/node-sass/node_modules/mocha/lib/browser/diff.js",
         "node_modules/node-sass/node_modules/mocha/lib/browser/events.js",
         "node_modules/node-sass/node_modules/mocha/lib/browser/progress.js",
         "node_modules/node-sass/node_modules/mocha/lib/browser/tty.js",
@@ -1389,8 +1383,6 @@
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/examples/g.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/examples/usr-local.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/glob.js",
-        "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/graceful-fs/graceful-fs.js",
-        "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/graceful-fs/polyfills.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/inherits/inherits.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/inherits/inherits_browser.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/inherits/test.js",
@@ -1436,13 +1428,9 @@
         "node_modules/node-sass/node_modules/mocha/node_modules/jade/runtime.min.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/jade/testing/index.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/jade/testing/user.js",
-        "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/bin/cmd.js",
-        "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/examples/pow.js",
-        "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/index.js",
-        "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/node_modules/minimist/example/parse.js",
-        "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/node_modules/minimist/index.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/supports-color/cli.js",
         "node_modules/node-sass/node_modules/mocha/node_modules/supports-color/index.js",
+        "node_modules/node-sass/node_modules/mocha/node_modules/to-iso-string/index.js",
         "node_modules/node-sass/node_modules/nan/include_dirs.js",
         "node_modules/node-sass/node_modules/nan/tools/node_modules/commander/index.js",
         "node_modules/node-sass/node_modules/nan/tools/node_modules/commander/node_modules/graceful-readlink/index.js",
@@ -1480,6 +1468,8 @@
         "node_modules/node-sass/node_modules/request/lib/redirect.js",
         "node_modules/node-sass/node_modules/request/lib/tunnel.js",
         "node_modules/node-sass/node_modules/request/node_modules/aws-sign2/index.js",
+        "node_modules/node-sass/node_modules/request/node_modules/aws4/aws4.js",
+        "node_modules/node-sass/node_modules/request/node_modules/aws4/lru.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/bl.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/duplex.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/lib/_stream_duplex.js",
@@ -1492,8 +1482,8 @@
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/inherits.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/inherits_browser.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/test.js",
-        "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/build/build.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/index.js",
+        "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/test.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args/index.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/process-nextick-args/test.js",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/string_decoder/index.js",
@@ -1511,6 +1501,7 @@
         "node_modules/node-sass/node_modules/request/node_modules/forever-agent/index.js",
         "node_modules/node-sass/node_modules/request/node_modules/form-data/lib/browser.js",
         "node_modules/node-sass/node_modules/request/node_modules/form-data/lib/form_data.js",
+        "node_modules/node-sass/node_modules/request/node_modules/form-data/lib/populate.js",
         "node_modules/node-sass/node_modules/request/node_modules/form-data/node_modules/async/dist/async.js",
         "node_modules/node-sass/node_modules/request/node_modules/form-data/node_modules/async/dist/async.min.js",
         "node_modules/node-sass/node_modules/request/node_modules/form-data/node_modules/async/lib/async.js",
@@ -1607,11 +1598,11 @@
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/tst/ber/writer.test.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/assert-plus/assert.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/lib/dashdash.js",
-        "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/node_modules/assert-plus/assert.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/ecc-jsbn/index.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/ecc-jsbn/lib/ec.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/ecc-jsbn/lib/sec.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/ecc-jsbn/test.js",
+        "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/getpass/lib/index.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/index.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/lib/core.js",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/lib/curve255.js",
@@ -1634,7 +1625,6 @@
         "node_modules/node-sass/node_modules/request/node_modules/node-uuid/benchmark/benchmark.js",
         "node_modules/node-sass/node_modules/request/node_modules/node-uuid/uuid.js",
         "node_modules/node-sass/node_modules/request/node_modules/oauth-sign/index.js",
-        "node_modules/node-sass/node_modules/request/node_modules/oauth-sign/test.js",
         "node_modules/node-sass/node_modules/request/node_modules/qs/dist/qs.js",
         "node_modules/node-sass/node_modules/request/node_modules/qs/lib/index.js",
         "node_modules/node-sass/node_modules/request/node_modules/qs/lib/parse.js",
@@ -2222,7 +2212,6 @@
         "node_modules/node-sass/node_modules/mocha/node_modules/debug/package.json",
         "node_modules/node-sass/node_modules/mocha/node_modules/diff/package.json",
         "node_modules/node-sass/node_modules/mocha/node_modules/escape-string-regexp/package.json",
-        "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/graceful-fs/package.json",
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/inherits/package.json",
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/minimatch/node_modules/lru-cache/package.json",
         "node_modules/node-sass/node_modules/mocha/node_modules/glob/node_modules/minimatch/node_modules/sigmund/package.json",
@@ -2232,9 +2221,9 @@
         "node_modules/node-sass/node_modules/mocha/node_modules/jade/node_modules/commander/package.json",
         "node_modules/node-sass/node_modules/mocha/node_modules/jade/node_modules/mkdirp/package.json",
         "node_modules/node-sass/node_modules/mocha/node_modules/jade/package.json",
-        "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/node_modules/minimist/package.json",
-        "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/package.json",
         "node_modules/node-sass/node_modules/mocha/node_modules/supports-color/package.json",
+        "node_modules/node-sass/node_modules/mocha/node_modules/to-iso-string/component.json",
+        "node_modules/node-sass/node_modules/mocha/node_modules/to-iso-string/package.json",
         "node_modules/node-sass/node_modules/mocha/package.json",
         "node_modules/node-sass/node_modules/nan/package.json",
         "node_modules/node-sass/node_modules/nan/tools/node_modules/commander/node_modules/graceful-readlink/package.json",
@@ -2253,6 +2242,7 @@
         "node_modules/node-sass/node_modules/object-assign/package.json",
         "node_modules/node-sass/node_modules/replace-ext/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/aws-sign2/package.json",
+        "node_modules/node-sass/node_modules/request/node_modules/aws4/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/core-util-is/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/inherits/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/bl/node_modules/readable-stream/node_modules/isarray/component.json",
@@ -2319,9 +2309,9 @@
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/jsprim/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/asn1/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/assert-plus/package.json",
-        "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/node_modules/assert-plus/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/ecc-jsbn/package.json",
+        "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/getpass/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/jsdoc.json",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/package.json",
         "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jsbn/package.json",
@@ -2602,7 +2592,7 @@
         ],
         "dependencies": {
           "es6-iterator": "2",
-          "es6-symbol": "~3.0.1"
+          "es6-symbol": "~3.0.2"
         }
       },
       {
@@ -2848,11 +2838,12 @@
           "debug": "2.2.0",
           "diff": "1.4.0",
           "escape-string-regexp": "1.0.2",
-          "glob": "3.2.3",
-          "growl": "1.8.1",
+          "glob": "3.2.11",
+          "growl": "1.9.2",
           "jade": "0.26.3",
-          "mkdirp": "0.5.0",
-          "supports-color": "1.2.0"
+          "mkdirp": "0.5.1",
+          "supports-color": "1.2.0",
+          "to-iso-string": "0.0.2"
         }
       },
       {
@@ -2870,9 +2861,8 @@
           "node_modules/node-sass/node_modules/mocha/node_modules/glob/test"
         ],
         "dependencies": {
-          "minimatch": "~0.2.11",
-          "graceful-fs": "~2.0.0",
-          "inherits": "2"
+          "inherits": "2",
+          "minimatch": "0.3"
         }
       },
       {
@@ -2899,41 +2889,31 @@
       },
       {
         "paths": [
-          "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/bin",
-          "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/examples",
-          "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp",
-          "node_modules/node-sass/node_modules/mocha/node_modules/mkdirp/test"
-        ],
-        "dependencies": {
-          "minimist": "0.0.8"
-        }
-      },
-      {
-        "paths": [
           "node_modules/node-sass/node_modules/request",
           "node_modules/node-sass/node_modules/request/lib"
         ],
         "dependencies": {
-          "bl": "~1.0.0",
+          "aws-sign2": "~0.6.0",
+          "aws4": "^1.2.1",
+          "bl": "~1.1.2",
           "caseless": "~0.11.0",
+          "combined-stream": "~1.0.5",
           "extend": "~3.0.0",
           "forever-agent": "~0.6.1",
           "form-data": "~1.0.0-rc3",
+          "har-validator": "~2.0.6",
+          "hawk": "~3.1.3",
+          "http-signature": "~1.1.0",
+          "is-typedarray": "~1.0.0",
+          "isstream": "~0.1.2",
           "json-stringify-safe": "~5.0.1",
           "mime-types": "~2.1.7",
           "node-uuid": "~1.4.7",
-          "qs": "~5.2.0",
-          "tunnel-agent": "~0.4.1",
-          "tough-cookie": "~2.2.0",
-          "http-signature": "~1.1.0",
-          "oauth-sign": "~0.8.0",
-          "hawk": "~3.1.0",
-          "aws-sign2": "~0.6.0",
+          "oauth-sign": "~0.8.1",
+          "qs": "~6.1.0",
           "stringstream": "~0.0.4",
-          "combined-stream": "~1.0.5",
-          "isstream": "~0.1.2",
-          "is-typedarray": "~1.0.0",
-          "har-validator": "~2.0.2"
+          "tough-cookie": "~2.2.0",
+          "tunnel-agent": "~0.4.1"
         }
       },
       {
@@ -2942,7 +2922,7 @@
           "node_modules/node-sass/node_modules/request/node_modules/bl/test"
         ],
         "dependencies": {
-          "readable-stream": "~2.0.0"
+          "readable-stream": "~2.0.5"
         }
       },
       {
@@ -2953,7 +2933,7 @@
         "dependencies": {
           "core-util-is": "~1.0.0",
           "inherits": "~2.0.1",
-          "isarray": "0.0.1",
+          "isarray": "~1.0.0",
           "process-nextick-args": "~1.0.6",
           "string_decoder": "~0.10.x",
           "util-deprecate": "~1.0.1"
@@ -2974,9 +2954,9 @@
           "node_modules/node-sass/node_modules/request/node_modules/form-data"
         ],
         "dependencies": {
-          "async": "^1.4.0",
+          "async": "^1.5.2",
           "combined-stream": "^1.0.5",
-          "mime-types": "^2.1.3"
+          "mime-types": "^2.1.10"
         }
       },
       {
@@ -2988,7 +2968,7 @@
         "dependencies": {
           "chalk": "^1.1.1",
           "commander": "^2.9.0",
-          "is-my-json-valid": "^2.12.3",
+          "is-my-json-valid": "^2.12.4",
           "pinkie-promise": "^2.0.0"
         }
       },
@@ -2997,7 +2977,7 @@
           "node_modules/node-sass/node_modules/request/node_modules/har-validator/node_modules/chalk"
         ],
         "dependencies": {
-          "ansi-styles": "^2.1.0",
+          "ansi-styles": "^2.2.1",
           "escape-string-regexp": "^1.0.2",
           "has-ansi": "^2.0.0",
           "strip-ansi": "^3.0.0",
@@ -3110,7 +3090,7 @@
           "node_modules/node-sass/node_modules/request/node_modules/http-signature"
         ],
         "dependencies": {
-          "assert-plus": "^0.1.5",
+          "assert-plus": "^0.2.0",
           "jsprim": "^1.2.2",
           "sshpk": "^1.7.0"
         }
@@ -3144,13 +3124,14 @@
           "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk"
         ],
         "dependencies": {
-          "asn1": ">=0.2.3 <0.3.0",
-          "assert-plus": ">=0.2.0 <0.3.0",
-          "dashdash": ">=1.10.1 <2.0.0",
-          "jsbn": ">=0.1.0 <0.2.0",
-          "tweetnacl": ">=0.13.0 <1.0.0",
-          "jodid25519": ">=1.0.0 <2.0.0",
-          "ecc-jsbn": ">=0.0.1 <1.0.0"
+          "asn1": "~0.2.3",
+          "assert-plus": "^1.0.0",
+          "dashdash": "^1.12.0",
+          "getpass": "^0.1.1",
+          "jsbn": "~0.1.0",
+          "tweetnacl": "~0.13.0",
+          "jodid25519": "^1.0.0",
+          "ecc-jsbn": "~0.1.1"
         }
       },
       {
@@ -3159,7 +3140,7 @@
           "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/dashdash"
         ],
         "dependencies": {
-          "assert-plus": "0.1.x"
+          "assert-plus": "^1.0.0"
         }
       },
       {
@@ -3169,6 +3150,15 @@
         ],
         "dependencies": {
           "jsbn": "~0.1.0"
+        }
+      },
+      {
+        "paths": [
+          "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/getpass/lib",
+          "node_modules/node-sass/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/getpass"
+        ],
+        "dependencies": {
+          "assert-plus": "^1.0.0"
         }
       },
       {
@@ -3185,7 +3175,7 @@
           "node_modules/node-sass/node_modules/request/node_modules/mime-types"
         ],
         "dependencies": {
-          "mime-db": "~1.20.0"
+          "mime-db": "~1.23.0"
         }
       },
       {
@@ -3429,7 +3419,7 @@
         ],
         "dependencies": {
           "es6-iterator": "2",
-          "es6-symbol": "~3.0.1"
+          "es6-symbol": "~3.0.2"
         }
       },
       {

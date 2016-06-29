@@ -10,12 +10,30 @@ module.exports =
       command: "oscript"
       args: (context) -> ['-encoding=utf-8', context.filepath]
 
+  Ansible:
+    "File Based":
+      command: "ansible-playbook"
+      args: (context) -> [context.filepath]
+
   AppleScript:
     'Selection Based':
       command: 'osascript'
       args: (context)  -> ['-e', context.getCode()]
     'File Based':
       command: 'osascript'
+      args: (context) -> [context.filepath]
+
+  'Babel ES6 JavaScript':
+    "Selection Based":
+      command: "babel-node"
+      args: (context) -> ['-e', context.getCode()]
+    "File Based":
+      command: "babel-node"
+      args: (context) -> [context.filepath]
+
+  Batch:
+    "File Based":
+      command: ""
       args: (context) -> [context.filepath]
 
   'Behat Feature':
@@ -26,10 +44,6 @@ module.exports =
       command: "behat"
       args: (context) -> [context.fileColonLine()]
 
-  Batch:
-    "File Based":
-      command: ""
-      args: (context) -> [context.filepath]
   C:
     if GrammarUtils.OperatingSystem.isDarwin()
       "File Based":
@@ -40,16 +54,20 @@ module.exports =
         command: "bash"
         args: (context) -> ["-c", "cc -Wall -include stdio.h '" + context.filepath + "' -o /tmp/c.out && /tmp/c.out"]
 
+  'C# Script File':
+    "File Based":
+      command: "scriptcs"
+      args: (context) -> ['-script', context.filepath]
+
   'C++':
     if GrammarUtils.OperatingSystem.isDarwin()
       "File Based":
         command: "bash"
         args: (context) -> ['-c', "xcrun clang++ -fcolor-diagnostics -Wc++11-extensions -Wall -include stdio.h -include iostream '" + context.filepath + "' -o /tmp/cpp.out && /tmp/cpp.out"]
-
-  'C# Script File':
-    "File Based":
-      command: "scriptcs"
-      args: (context) -> ['-script', context.filepath]
+    else if GrammarUtils.OperatingSystem.isLinux()
+      "File Based":
+        command: "bash"
+        args: (context) -> ["-c", "g++ -Wall -include stdio.h -include iostream '" + context.filepath + "' -o /tmp/cpp.out && /tmp/cpp.out"]
 
   Clojure:
     "Selection Based":
@@ -86,6 +104,11 @@ module.exports =
   D:
     "File Based":
       command: "rdmd"
+      args: (context) -> [context.filepath]
+
+  Dart:
+    "File Based":
+      command: "dart"
       args: (context) -> [context.filepath]
 
   DOT:
@@ -133,7 +156,10 @@ module.exports =
   Go:
     "File Based":
       command: "go"
-      args: (context) -> ['run', context.filepath]
+      args: (context) ->
+        if context.filepath.match(/_test.go/) then ['test', '' ]
+        else ['run', context.filepath]
+      workingDirectory: atom.workspace.getActivePaneItem()?.buffer?.file?.getParent?().getPath?()
 
   Groovy:
     "Selection Based":
@@ -174,7 +200,7 @@ module.exports =
         className = context.filename.replace /\.java$/, ""
         args = []
         if GrammarUtils.OperatingSystem.isWindows()
-          args = ["/c javac -Xlint #{context.filename} && start cmd /k java #{className}"]
+          args = ["/c javac -Xlint #{context.filename} && java #{className}"]
         else
           args = ['-c', "javac -d /tmp '#{context.filepath}' && java -cp /tmp #{className}"]
         return args
@@ -187,14 +213,6 @@ module.exports =
       command: "node"
       args: (context) -> [context.filepath]
 
-  'Babel ES6 JavaScript':
-    "Selection Based":
-      command: "babel-node"
-      args: (context) -> ['-e', context.getCode()]
-    "File Based":
-      command: "babel-node"
-      args: (context) -> [context.filepath]
-
   "JavaScript for Automation (JXA)":
     "Selection Based":
       command: "osascript"
@@ -202,6 +220,11 @@ module.exports =
     "File Based":
       command: "osascript"
       args: (context) -> ['-l', 'JavaScript', context.filepath]
+
+  Jolie:
+    "File Based":
+      command: "jolie"
+      args: (context) -> [context.filepath]
 
   Julia:
     "Selection Based":
@@ -277,6 +300,14 @@ module.exports =
       command: "lua"
       args: (context) -> [context.filepath]
 
+  Makefile:
+    "Selection Based":
+      command: "bash"
+      args: (context) -> ['-c', context.getCode()]
+    "File Based":
+      command: "make"
+      args: (context) -> ['-f', context.filepath]
+
   MagicPython:
     "Selection Based":
       command: "python"
@@ -284,6 +315,17 @@ module.exports =
     "File Based":
       command: "python"
       args: (context) -> ['-u', context.filepath]
+
+  MATLAB:
+    "Selection Based":
+      command: "matlab"
+      args: (context) ->
+        code = context.getCode()
+        tmpFile = GrammarUtils.MATLAB.createTempFileWithCode(code)
+        ['-nodesktop','-nosplash','-nojvm','-nodisplay','-r',"try, run('" + tmpFile + "'), catch ME, disp(ME.message);,exit(1);, end, exit(0);"]
+    "File Based":
+      command: "matlab"
+      args: (context) -> ['-nodesktop','-nosplash','-nojvm','-nodisplay','-r',"try, run('" + context.filepath + "'), catch ME, disp(ME.message);,exit(1);, end, exit(0);"]
 
   MoonScript:
     "Selection Based":
@@ -323,6 +365,14 @@ module.exports =
       command: "newlisp"
       args: (context) -> [context.filepath]
 
+  Nim:
+    "File Based":
+      command: "bash"
+      args: (context) ->
+        file = GrammarUtils.Nim.findNimProjectFile(context.filepath)
+        path = GrammarUtils.Nim.projectDir(context.filepath)
+        ['-c', 'cd "' + path + '" && nim c --hints:off --parallelBuild:1 -r "' + file + '" 2>&1']
+
   NSIS:
     "Selection Based":
       command: "makensis"
@@ -346,26 +396,23 @@ module.exports =
         command: "bash"
         args: (context) -> ['-c', "xcrun clang++ -fcolor-diagnostics -Wc++11-extensions -Wall -include stdio.h -include iostream -framework Cocoa " + context.filepath + " -o /tmp/objc-cpp.out && /tmp/objc-cpp.out"]
 
-  ocaml:
+  OCaml:
     "File Based":
       command: "ocaml"
       args: (context) -> [context.filepath]
+
+  Octave:
+    "Selection Based":
+      command: "octave"
+      args: (context) -> ['-p', context.filepath.replace(/[^\/]*$/, ''), '--eval', context.getCode()]
+    "File Based":
+      command: "octave"
+      args: (context) -> ['-p', context.filepath.replace(/[^\/]*$/, ''), context.filepath]
 
   'Pandoc Markdown':
     "File Based":
       command: "panzer"
       args: (context) -> [context.filepath, "--output=" + context.filepath + ".pdf"]
-
-  PHP:
-    "Selection Based":
-      command: "php"
-      args: (context) ->
-        code = context.getCode()
-        file = GrammarUtils.PHP.createTempFileWithCode(code)
-        [file]
-    "File Based":
-      command: "php"
-      args: (context) -> [context.filepath]
 
   Perl:
     "Selection Based":
@@ -394,10 +441,26 @@ module.exports =
       command: "perl6"
       args: (context) -> [context.filepath]
 
+  PHP:
+    "Selection Based":
+      command: "php"
+      args: (context) ->
+        code = context.getCode()
+        file = GrammarUtils.PHP.createTempFileWithCode(code)
+        [file]
+    "File Based":
+      command: "php"
+      args: (context) -> [context.filepath]
+
   PowerShell:
     "File Based":
       command: "powershell"
       args: (context) -> [context.filepath.replace /\ /g, "` "]
+
+  Prolog:
+    "File Based":
+      command: "bash"
+      args: (context) -> ['-c', 'cd \"' + context.filepath.replace(/[^\/]*$/, '') + '\"; swipl -f \"' + context.filepath + '\" -t main --quiet']
 
   Python:
     "Selection Based":
@@ -466,16 +529,15 @@ module.exports =
 
   Rust:
     "File Based":
-      command: "bash"
-      args: (context) -> ['-c', "rustc '#{context.filepath}' -o /tmp/rs.out && /tmp/rs.out"]
-
-  Makefile:
-    "Selection Based":
-      command: "bash"
-      args: (context) -> ['-c', context.getCode()]
-    "File Based":
-      command: "make"
-      args: (context) -> ['-f', context.filepath]
+      command: if GrammarUtils.OperatingSystem.isWindows() then "cmd" else "bash"
+      args: (context) ->
+        progname = context.filename.replace /\.rs$/, ""
+        args = []
+        if GrammarUtils.OperatingSystem.isWindows()
+          args = ["/c rustc #{context.filepath} && #{progname}.exe"]
+        else
+          args = ['-c', "rustc '#{context.filepath}' -o /tmp/rs.out && /tmp/rs.out"]
+        return args
 
   Sage:
     "Selection Based":
@@ -540,13 +602,13 @@ module.exports =
       command: "sml"
       args: (context) -> [context.filepath]
 
-  Nim:
+  Stata:
+    "Selection Based":
+      command: "xstata-se"
+      args: (context)  -> ['do', context.getCode()]
     "File Based":
-      command: "bash"
-      args: (context) ->
-        file = GrammarUtils.Nim.findNimProjectFile(context.filepath)
-        path = GrammarUtils.Nim.projectDir(context.filepath)
-        ['-c', 'cd "' + path + '" && nim c --hints:off --parallelBuild:1 -r "' + file + '" 2>&1']
+      command: "xstata-se"
+      args: (context) -> ['do', context.filepath]
 
   Swift:
     "File Based":
@@ -565,21 +627,3 @@ module.exports =
     "File Based":
       command: "bash"
       args: (context) -> ['-c', "tsc '#{context.filepath}' --out /tmp/js.out && node /tmp/js.out"]
-
-  Dart:
-    "File Based":
-      command: "dart"
-      args: (context) -> [context.filepath]
-
-  Octave:
-    "Selection Based":
-      command: "octave"
-      args: (context) -> ['-p', context.filepath.replace(/[^\/]*$/, ''), '--eval', context.getCode()]
-    "File Based":
-      command: "octave"
-      args: (context) -> ['-p', context.filepath.replace(/[^\/]*$/, ''), context.filepath]
-
-  Prolog:
-    "File Based":
-      command: "bash"
-      args: (context) -> ['-c', 'cd \"' + context.filepath.replace(/[^\/]*$/, '') + '\"; swipl -f \"' + context.filepath + '\" -t main --quiet']

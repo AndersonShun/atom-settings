@@ -96,9 +96,9 @@ This command can be triggered using the keyboard by defining a keybinding like t
   'alt-shift-f': 'pigments:find-colors'
 ```
 
-### Pigments: Convert To Hexadecimal/Pigments: Convert to RGB(A)
+### Pigments: Convert To *
 
-It evaluates and replace a color by either its hexadecimal notation or rgb/rgba notation.
+It evaluates and replace a color by the corresponding notation.
 Accessible from the command palette or by right clicking on a color.
 
 ![pigments-conversion](https://github.com/abe33/atom-pigments/blob/master/resources/context-menu-conversion.gif?raw=true)
@@ -110,6 +110,8 @@ These commands can be triggered using the keyboard by defining a keybinding like
   'alt-shift-h': 'pigments:convert-to-hex'
   'alt-shift-g': 'pigments:convert-to-rgb'
   'alt-shift-j': 'pigments:convert-to-rgba'
+  'alt-shift-k': 'pigments:convert-to-hsl'
+  'alt-shift-l': 'pigments:convert-to-hsla'
 ```
 
 When triggered from the command palette or from the keyboard, the conversion will operate on every cursor positioned on color markers.
@@ -171,6 +173,13 @@ An array of file extensions where colors will be highlighted. If the wildcard `*
 * Key: `pigments.supportedFiletypes`
 * Default: `['*']`
 
+### Extended Filetypes For Color Words
+
+An array of file extensions where color values such as `red`, `azure` or `whitesmoke` will be highlighted. By default CSS and CSS pre-processors files are supported.
+
+* Key: `pigments.extendedFiletypesForColorWords`
+* Default: `[]`
+
 ### Ignored Scopes
 
 An array of regular expressions strings to match scopes to ignore when rendering colors in a text editor.
@@ -183,7 +192,7 @@ For instance, if you want to ignore colors in comments and strings in your sourc
 
 As you can notice, the `.` character in scopes are escaped. This is due to the fact that this setting uses javascript `RegExp` to test the token's scope and the `.` is used to match against any character.
 
-For instance, to ignores colors in html attributes you can use the following expression:
+For instance, to ignore colors in html attributes you can use the following expression:
 
 ```
 \.text\.html(.*)\.string
@@ -208,6 +217,13 @@ The autocomplete provider will only complete color names in editors whose scope 
 When enabled, the autocomplete provider will also provides completion for non-color variables.
 
 * Key: `pigments.extendAutocompleteToVariables`
+* Default: `false`
+
+### Extend Autocomplete To Color Value
+
+When enabled, the autocomplete provider will also provides color value.
+
+* Key: `pigments.extendAutocompleteToColorValue`
 * Default: `false`
 
 ### Traverse Into Symlink Directories

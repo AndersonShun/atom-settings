@@ -1,6 +1,6 @@
 # One-O-Eight
 
-One-O-Eight is a mutli-schemes syntax. It comes with two backgrounds (white on
+One-O-Eight is a multi-schemes syntax. It comes with two backgrounds (white on
 black or black on white), and (as of now) three foreground schemes: *Bright*,
 *Viridis*, and *Calm*. All schemes are based on five colours; the name
 one-o-eight comes from 108°, the internal angles in a pentagon.
@@ -15,6 +15,7 @@ one-o-eight comes from 108°, the internal angles in a pentagon.
 - Support for `json`, `cson`
 - Support for `python`
 - Support for `tasks`
+- Improved markdown preview
 
 ## Variants overview
 

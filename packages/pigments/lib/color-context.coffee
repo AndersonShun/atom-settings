@@ -1,9 +1,10 @@
-path = require 'path'
+
 Color = require './color'
 ColorParser = null
 ColorExpression = require './color-expression'
 SVGColors = require './svg-colors'
 BlendModes = require './blend-modes'
+scopeFromFileName = require './scope-from-file-name'
 {split, clamp, clampInt} = require './utils'
 {
   int
@@ -61,6 +62,7 @@ class ColorContext
       @parser = new ColorParser(@registry, this)
 
     @usedVariables = []
+    @resolvedVariables = []
 
   sortPaths: (a,b) =>
     if @referencePath?
@@ -120,6 +122,7 @@ class ColorContext
     usedVariables = []
     usedVariables.push v for v in @usedVariables when v not in usedVariables
     @usedVariables = []
+    @resolvedVariables = []
     usedVariables
 
   ##    ##     ##    ###    ##       ##     ## ########  ######
@@ -132,21 +135,14 @@ class ColorContext
 
   getValue: (value) ->
     [realValue, lastRealValue] = []
+    lookedUpValues = [value]
 
-    while realValue = @vars[value]?.value
+    while (realValue = @vars[value]?.value) and realValue not in lookedUpValues
       @usedVariables.push(value)
       value = lastRealValue = realValue
+      lookedUpValues.push(realValue)
 
-    lastRealValue
-
-  getColorValue: (value) ->
-    [realValue, lastRealValue] = []
-
-    while realValue = @colorVars[value]?.value
-      @usedVariables.push(value)
-      value = lastRealValue = realValue
-
-    lastRealValue
+    if realValue in lookedUpValues then undefined else lastRealValue
 
   readColorExpression: (value) ->
     if @colorVars[value]?
@@ -156,19 +152,22 @@ class ColorContext
       value
 
   readColor: (value, keepAllVariables=false) ->
+    return if value in @usedVariables and not (value in @resolvedVariables)
+
     realValue = @readColorExpression(value)
-    return unless realValue?
+
+    return if not realValue? or realValue in @usedVariables
 
     scope = if @colorVars[value]?
-      path.extname @colorVars[value].path
+      scopeFromFileName(@colorVars[value].path)
     else
       '*'
 
+    @usedVariables = @usedVariables.filter (v) -> v isnt realValue
     result = @parser.parse(realValue, scope, false)
 
     if result?
       if result.invalid and @defaultColorVars[realValue]?
-        @usedVariables.push(realValue)
         result = @readColor(@defaultColorVars[realValue].value)
         value = realValue
 
@@ -179,8 +178,10 @@ class ColorContext
     else
       @usedVariables.push(value) if @vars[value]?
 
-    if result? and (keepAllVariables or value not in @usedVariables)
-      result.variables = (result.variables ? []).concat(@readUsedVariables())
+    if result?
+      @resolvedVariables.push(value)
+      if keepAllVariables or value not in @usedVariables
+        result.variables = (result.variables ? []).concat(@readUsedVariables())
 
     return result
 
@@ -281,7 +282,7 @@ class ColorContext
 
   clampInt: (value) -> clampInt(value)
 
-  isInvalid: (color) -> not color?.isValid()
+  isInvalid: (color) -> not Color.isValid(color)
 
   readParam: (param, block) ->
     re = ///\$(\w+):\s*((-?#{@float})|#{@variablesRE})///
@@ -299,6 +300,8 @@ class ColorContext
       light
 
   mixColors: (color1, color2, amount=0.5, round=Math.floor) ->
+    return new Color(NaN, NaN, NaN, NaN) unless color1? and color2? and not isNaN(amount)
+
     inverse = 1 - amount
     color = new Color
 

@@ -1,8 +1,8 @@
 {
   "name": "markdown-preview-plus",
-  "version": "2.2.2",
+  "version": "2.4.0",
   "main": "./lib/main",
-  "description": "Better markdown preview in atom (optional pandoc support)",
+  "description": "Markdown Preview + Community Features",
   "keywords": [
     "markdown",
     "maths",
@@ -26,9 +26,9 @@
     "highlights-native": "^2.1.0",
     "lodash": "^3.10.1",
     "MathJax": "https://github.com/Galadirith/MathJax/tarball/2.4.0-electron.0.2.0",
-    "markdown-it": "^4.4.0",
+    "markdown-it": "^5.1.0",
     "markdown-it-lazy-headers": "^0.1.2",
-    "markdown-it-math": "https://github.com/leipert/markdown-it-math/tarball/quickfix3",
+    "markdown-it-math": "https://github.com/Galadirith/markdown-it-math/tarball/fix-table-pipe-parse-no-ascii",
     "pdc": "~0.2.2",
     "season": "^5.3",
     "temp": "^0.8.1",
@@ -39,22 +39,25 @@
     "coffeelint": "^1.9.7",
     "jasmine-tagged": "^1.1.4"
   },
-  "readme": "# Markdown Preview Plus (MPP)\n\n[![appveyor][ab]][a] [![travis][tb]][t] [![wercker][wb]][w] ![apm version][av] ![apm downloads][ad]\n\nMarkdown Preview Plus (MPP) is a fork of\n[Markdown Preview](https://github.com/atom/markdown-preview) that provides a\nreal-time preview of markdown documents.\n\nShould you have any problems while\ninstalling or using MPP, or if you would like to see a new feature added please\nopen up a [new issue][issue].\n\nWe also maintain a [changelog][changelog] for you to see what improved in MPP.\n\n![MPP][preview]\n\n## Features\n\nWe also have a more detailed description of [features][features].\n\n-   Fastly open a preview of any markdown with `ctrl-shift-m`\n-   Math rendering with persistent macro support, toggled with `ctrl-shift-x`\n-   Optionally use pandoc with citation support\n-   Live reload while editing\n-   On demand synchronization\n-   And many more...\n-   missing one? write an [issue][issue]\n\n## Installation\n\nLong instructions can be found [here][installation]. In short steps:\n\n1.  Search for and install `markdown-preview-plus` in Atom's Settings view.\n2.  Search for and disable the built-in package `markdown-preview`.\n3.  (Optional) Install and enable [Pandoc][pandoc].\n\n## Usage\n\nPlease see [options][options] for further details on configuring MPP and\n[math][math] for more details on math rendering. For basic usage:\n\n-   Toggle Preview: `ctrl-shift-m`\n-   Toggle Math Rendering: `ctrl-shift-x`\n\n## License\n\nMarkdown Preview Plus (MPP) is released under the [MIT license][license].\n\n[preview]: https://raw.githubusercontent.com/Galadirith/markdown-preview-plus/master/imgs/mpp-full-res-invert.png\n[changelog]: https://github.com/Galadirith/markdown-preview-plus/blob/master/CHANGELOG.md\n[issue]: https://github.com/Galadirith/markdown-preview-plus/issues\n[installation]: docs/installation.md\n[license]: LICENSE.md\n[math]: docs/math.md\n[features]: docs/features.md\n[node-gyp]: https://github.com/TooTallNate/node-gyp#installation\n[options]: docs/options.md\n[pandoc]: http://pandoc.org\n\n[ad]: https://img.shields.io/apm/dm/markdown-preview-plus.svg\n[av]: https://img.shields.io/apm/v/markdown-preview-plus.svg\n[ab]: https://img.shields.io/appveyor/ci/Galadirith/markdown-preview-plus/master.svg?label=appveyor\n[a]: https://ci.appveyor.com/project/Galadirith/markdown-preview-plus/branch/master\n[tb]:\nhttps://img.shields.io/travis/Galadirith/markdown-preview-plus/master.svg?label=travis\n[t]: https://travis-ci.org/Galadirith/markdown-preview-plus\n[wb]: https://app.wercker.com/status/c2d80d0da6512a2c065a802a75b9a362/s/master\n[w]: https://app.wercker.com/project/bykey/c2d80d0da6512a2c065a802a75b9a362\n",
+  "deserializers": {
+    "MarkdownPreviewView": "createMarkdownPreviewView"
+  },
+  "readme": "# Markdown Preview Plus (MPP)\n\n[![appveyor][ab]][a] [![travis][tb]][t] ![apm version][av] ![apm downloads][ad]\n\nMarkdown Preview Plus (MPP) is a fork of\n[Markdown Preview](https://github.com/atom/markdown-preview) that provides a\nreal-time preview of markdown documents.\n\nShould you have any problems while installing or using MPP please open up a\n[new issue][issue].\n\n![MPP][preview]\n\n## Features\n\nWe also have a more detailed description of [features][features].\n\n-   Fastly open a preview of any markdown with `ctrl-shift-m`\n-   Math rendering with persistent macro support, toggled with `ctrl-shift-x`\n-   Optionally use pandoc with citation support\n-   Live reload while editing\n-   On demand synchronization\n-   And many more...\n\n## Installation\n\nLong instructions can be found [here][installation]. In short steps:\n\n1.  Search for and install `markdown-preview-plus` in Atom's Settings view.\n2.  Search for and disable the built-in package `markdown-preview`.\n3.  (Optional) Install and enable [Pandoc][pandoc].\n\n## Usage\n\nPlease see [options][options] for further details on configuring MPP and\n[math][math] for more details on math rendering. For basic usage:\n\n-   Toggle Preview: `ctrl-shift-m`\n-   Toggle Math Rendering: `ctrl-shift-x`\n\n## License\n\nMarkdown Preview Plus (MPP) is released under the [MIT license][license].\n\n[preview]: https://raw.githubusercontent.com/Galadirith/markdown-preview-plus/master/imgs/mpp-full-res-invert.png\n[changelog]: https://github.com/Galadirith/markdown-preview-plus/blob/master/CHANGELOG.md\n[issue]: https://github.com/Galadirith/markdown-preview-plus/issues\n[installation]: docs/installation.md\n[license]: LICENSE.md\n[math]: docs/math.md\n[features]: docs/features.md\n[node-gyp]: https://github.com/TooTallNate/node-gyp#installation\n[options]: docs/options.md\n[pandoc]: http://pandoc.org\n\n[ad]: https://img.shields.io/apm/dm/markdown-preview-plus.svg\n[av]: https://img.shields.io/apm/v/markdown-preview-plus.svg\n[ab]: https://img.shields.io/appveyor/ci/Galadirith/markdown-preview-plus/master.svg?label=appveyor\n[a]: https://ci.appveyor.com/project/Galadirith/markdown-preview-plus/branch/master\n[tb]: https://img.shields.io/travis/Galadirith/markdown-preview-plus/master.svg?label=travis\n[t]: https://travis-ci.org/Galadirith/markdown-preview-plus\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/Galadirith/markdown-preview-plus/issues"
   },
   "homepage": "https://github.com/Galadirith/markdown-preview-plus#readme",
-  "_id": "markdown-preview-plus@2.2.2",
-  "_shasum": "b368714b1303ec1d1386a78e5e4c5f1135a025d6",
-  "_resolved": "file:../d-1151015-88445-1cq0f46/package.tgz",
-  "_from": "../d-1151015-88445-1cq0f46/package.tgz",
+  "_id": "markdown-preview-plus@2.4.0",
+  "_shasum": "9505eec2b075159212a3870bf735ce2dfcd04b8f",
+  "_resolved": "file:../d-116529-54048-g70za7/package.tgz",
+  "_from": "../d-116529-54048-g70za7/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "atom-space-pen-views",
-        "version": "2.1.0",
+        "version": "2.2.0",
         "path": "node_modules/atom-space-pen-views/lib/main.js"
       },
       {
@@ -64,7 +67,7 @@
       },
       {
         "name": "space-pen",
-        "version": "5.1.1",
+        "version": "5.1.2",
         "path": "node_modules/atom-space-pen-views/node_modules/space-pen/lib/space-pen.js"
       },
       {
@@ -139,12 +142,12 @@
       },
       {
         "name": "readable-stream",
-        "version": "1.1.13",
+        "version": "1.1.14",
         "path": "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/readable.js"
       },
       {
         "name": "core-util-is",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "path": "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/core-util-is/lib/util.js"
       },
       {
@@ -169,7 +172,7 @@
       },
       {
         "name": "fs-plus",
-        "version": "2.8.1",
+        "version": "2.9.1",
         "path": "node_modules/fs-plus/lib/fs-plus.js"
       },
       {
@@ -209,7 +212,7 @@
       },
       {
         "name": "es5-ext",
-        "version": "0.10.8",
+        "version": "0.10.11",
         "path": "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/index.js"
       },
       {
@@ -219,7 +222,7 @@
       },
       {
         "name": "es6-symbol",
-        "version": "3.0.1",
+        "version": "3.0.2",
         "path": "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol/index.js"
       },
       {
@@ -269,12 +272,12 @@
       },
       {
         "name": "markdown-it",
-        "version": "4.4.0",
+        "version": "5.1.0",
         "path": "node_modules/markdown-it/index.js"
       },
       {
         "name": "argparse",
-        "version": "1.0.3",
+        "version": "1.0.7",
         "path": "node_modules/markdown-it/node_modules/argparse/index.js"
       },
       {
@@ -289,7 +292,7 @@
       },
       {
         "name": "linkify-it",
-        "version": "1.2.0",
+        "version": "1.2.4",
         "path": "node_modules/markdown-it/node_modules/linkify-it/index.js"
       },
       {
@@ -299,7 +302,7 @@
       },
       {
         "name": "uc.micro",
-        "version": "1.0.0",
+        "version": "1.0.2",
         "path": "node_modules/markdown-it/node_modules/uc.micro/index.js"
       },
       {
@@ -309,7 +312,7 @@
       },
       {
         "name": "markdown-it-math",
-        "version": "3.0.1",
+        "version": "3.0.2",
         "path": "node_modules/markdown-it-math/index.js"
       },
       {
@@ -374,7 +377,7 @@
       },
       {
         "name": "wrench",
-        "version": "1.5.8",
+        "version": "1.5.9",
         "path": "node_modules/wrench/lib/wrench.js"
       }
     ],
@@ -438,7 +441,6 @@
         "node_modules/highlights-native/node_modules/optimist/package.json",
         "node_modules/highlights-native/package.json",
         "node_modules/lodash/package.json",
-        "node_modules/markdown-it/bower.json",
         "node_modules/markdown-it/node_modules/argparse/node_modules/sprintf-js/bower.json",
         "node_modules/markdown-it/node_modules/argparse/node_modules/sprintf-js/package.json",
         "node_modules/markdown-it/node_modules/argparse/package.json",
@@ -904,7 +906,7 @@
         "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/lib/_stream_transform.js",
         "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/lib/_stream_writable.js",
         "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/core-util-is/lib/util.js",
-        "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/core-util-is/util.js",
+        "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/core-util-is/test.js",
         "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/inherits.js",
         "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/inherits_browser.js",
         "node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits/test.js",
@@ -1213,6 +1215,8 @@
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/copy.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/count.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/create.js",
+        "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/ensure-natural-number-value.js",
+        "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/ensure-natural-number.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/eq.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/every.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/filter.js",
@@ -1228,6 +1232,7 @@
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-copy-deep.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-copy.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-empty.js",
+        "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-number-value.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-object.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is-plain-object.js",
         "node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/object/is.js",
@@ -1841,6 +1846,7 @@
         "node_modules/markdown-it/lib/rules_core/state_core.js",
         "node_modules/markdown-it/lib/rules_inline/autolink.js",
         "node_modules/markdown-it/lib/rules_inline/backticks.js",
+        "node_modules/markdown-it/lib/rules_inline/balance_pairs.js",
         "node_modules/markdown-it/lib/rules_inline/emphasis.js",
         "node_modules/markdown-it/lib/rules_inline/entity.js",
         "node_modules/markdown-it/lib/rules_inline/escape.js",
@@ -1851,17 +1857,8 @@
         "node_modules/markdown-it/lib/rules_inline/state_inline.js",
         "node_modules/markdown-it/lib/rules_inline/strikethrough.js",
         "node_modules/markdown-it/lib/rules_inline/text.js",
+        "node_modules/markdown-it/lib/rules_inline/text_collapse.js",
         "node_modules/markdown-it/lib/token.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/arguments.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/choice.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/constants.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/help.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/nargs.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/parents.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/prefix_chars.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/sub_commands.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/sum.js",
-        "node_modules/markdown-it/node_modules/argparse/examples/testformatters.js",
         "node_modules/markdown-it/node_modules/argparse/index.js",
         "node_modules/markdown-it/node_modules/argparse/lib/action/append/constant.js",
         "node_modules/markdown-it/node_modules/argparse/lib/action/append.js",
@@ -1884,6 +1881,7 @@
         "node_modules/markdown-it/node_modules/argparse/lib/help/added_formatters.js",
         "node_modules/markdown-it/node_modules/argparse/lib/help/formatter.js",
         "node_modules/markdown-it/node_modules/argparse/lib/namespace.js",
+        "node_modules/markdown-it/node_modules/argparse/lib/utils.js",
         "node_modules/markdown-it/node_modules/argparse/node_modules/sprintf-js/dist/angular-sprintf.min.js",
         "node_modules/markdown-it/node_modules/argparse/node_modules/sprintf-js/dist/sprintf.min.js",
         "node_modules/markdown-it/node_modules/argparse/node_modules/sprintf-js/gruntfile.js",
@@ -1911,6 +1909,7 @@
         "node_modules/markdown-it-math/dist/markdown-it-math.min.js",
         "node_modules/markdown-it-math/index.js",
         "node_modules/markdown-it-math/lib/polyfills.js",
+        "node_modules/markdown-it-math/lib/table.js",
         "node_modules/pdc/pdc.js",
         "node_modules/pdc/test.js",
         "node_modules/season/lib/cson.js",
@@ -1984,7 +1983,7 @@
           "grim": "^1.2.1",
           "highlights-native": "^2.1.0",
           "lodash": "^3.10.1",
-          "markdown-it": "^4.4.0",
+          "markdown-it": "^5.1.0",
           "markdown-it-lazy-headers": "^0.1.2",
           "pdc": "~0.2.2",
           "season": "^5.3",
@@ -2000,7 +1999,7 @@
         ],
         "dependencies": {
           "fuzzaldrin": "^2.1.0",
-          "space-pen": "^5.0.1"
+          "space-pen": "^5.1.2"
         }
       },
       {
@@ -2010,7 +2009,7 @@
         ],
         "dependencies": {
           "grim": "^1.0.0",
-          "jquery": "^2.1.3",
+          "jquery": "2.1.4",
           "underscore-plus": "1.x"
         }
       },
@@ -2327,7 +2326,7 @@
         ],
         "dependencies": {
           "es6-iterator": "2",
-          "es6-symbol": "3"
+          "es6-symbol": "~3.0.2"
         }
       },
       {
@@ -2350,7 +2349,7 @@
         ],
         "dependencies": {
           "d": "~0.1.1",
-          "es5-ext": "~0.10.8"
+          "es5-ext": "~0.10.10"
         }
       },
       {
@@ -2414,8 +2413,8 @@
       {
         "paths": [
           "node_modules/markdown-it/bin",
-          "node_modules/markdown-it",
           "node_modules/markdown-it/dist",
+          "node_modules/markdown-it",
           "node_modules/markdown-it/lib/common",
           "node_modules/markdown-it/lib/helpers",
           "node_modules/markdown-it/lib",
@@ -2425,16 +2424,15 @@
           "node_modules/markdown-it/lib/rules_inline"
         ],
         "dependencies": {
-          "argparse": "~1.0.2",
+          "argparse": "~1.0.3",
           "entities": "~1.1.1",
           "linkify-it": "~1.2.0",
-          "mdurl": "~1.0.0",
+          "mdurl": "~1.0.1",
           "uc.micro": "^1.0.0"
         }
       },
       {
         "paths": [
-          "node_modules/markdown-it/node_modules/argparse/examples",
           "node_modules/markdown-it/node_modules/argparse",
           "node_modules/markdown-it/node_modules/argparse/lib/action/append",
           "node_modules/markdown-it/node_modules/argparse/lib/action",
@@ -2444,7 +2442,6 @@
           "node_modules/markdown-it/node_modules/argparse/lib/help"
         ],
         "dependencies": {
-          "lodash": ">= 3.2.0 < 4.0.0",
           "sprintf-js": "~1.0.2"
         }
       },
@@ -2454,7 +2451,7 @@
           "node_modules/markdown-it/node_modules/linkify-it/lib"
         ],
         "dependencies": {
-          "uc.micro": "^1.0.0"
+          "uc.micro": "^1.0.1"
         }
       },
       {

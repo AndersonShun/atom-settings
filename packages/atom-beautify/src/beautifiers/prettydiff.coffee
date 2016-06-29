@@ -6,8 +6,14 @@ module.exports = class PrettyDiff extends Beautifier
   options: {
     # Apply these options first / globally, for all languages
     _:
-      inchar: "indent_char"
-      insize: "indent_size"
+      inchar: ["indent_with_tabs", "indent_char", (indent_with_tabs, indent_char) ->
+        if (indent_with_tabs is true) then \
+          "\t" else indent_char
+      ]
+      insize: ["indent_with_tabs", "indent_size", (indent_with_tabs, indent_size) ->
+        if (indent_with_tabs is true) then \
+          1 else indent_size
+      ]
       objsort: (objsort) ->
         objsort or false
       preserve: ['preserve_newlines', (preserve_newlines) ->
@@ -33,11 +39,14 @@ module.exports = class PrettyDiff extends Beautifier
         if (break_chained_methods is true ) then \
           false else true
       ]
+      ternaryline: "preserve_ternary_lines"
     # Apply language-specific options
     CSV: true
+    Coldfusion: true
     ERB: true
     EJS: true
     HTML: true
+    Handlebars: true
     XML: true
     SVG: true
     Spacebars: true
@@ -52,6 +61,8 @@ module.exports = class PrettyDiff extends Beautifier
     LESS: true
     Swig: true
     Visualforce: true
+    "Riot.js": true
+    XTemplate: true
   }
 
   beautify: (text, language, options) ->
@@ -65,11 +76,13 @@ module.exports = class PrettyDiff extends Beautifier
       switch language
         when "CSV"
           lang = "csv"
+        when "Coldfusion"
+          lang = "html"
         when "EJS", "Twig"
           lang = "ejs"
         when "ERB"
           lang = "html_ruby"
-        when "Handlebars", "Mustache", "Spacebars", "Swig"
+        when "Handlebars", "Mustache", "Spacebars", "Swig", "Riot.js", "XTemplate"
           lang = "handlebars"
         when "SGML"
           lang = "markup"

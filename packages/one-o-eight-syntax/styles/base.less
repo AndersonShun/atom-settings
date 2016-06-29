@@ -1,17 +1,17 @@
 @import "syntax-variables";
 
 atom-text-editor, :host {
-  -webkit-text-stroke: 0.1px 0.1px fadeout(@writer-bg, 50%);
-  text-shadow: 0.2px 0.2px fadeout(@very-light-gray, 50%);
   background-color: @syntax-background-color;
   color: @syntax-text-color;
 
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
+    z-index: -10000;
   }
 
   .indent-guide {
     color: @syntax-indent-guide-color;
+    z-index: -10000;
   }
 
   .invisible-character {
@@ -19,20 +19,18 @@ atom-text-editor, :host {
   }
 
   .gutter {
-    background-color: @syntax-gutter-background-color;
+
     color: @syntax-gutter-text-color;
 
     .line-number {
 
-      background-color: none !important;
-
       &.cursor-line {
         color: @syntax-gutter-text-color-selected;
-        font-weight: bold;
       }
 
       &.cursor-line-no-selection {
         color: @syntax-gutter-text-color-selected;
+
       }
     }
   }

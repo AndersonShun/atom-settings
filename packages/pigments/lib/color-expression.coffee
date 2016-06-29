@@ -18,10 +18,14 @@ class ColorExpression
       scopes: ['*']
       priority: 1
       handle: (match, expression, context) ->
-        [_,name] = match
-        return @invalid = true if context.readColorExpression(name) is name
+        [_, _,name] = match
 
-        baseColor = context.readColor(name)
+        name = match[0] unless name?
+
+        evaluated = context.readColorExpression(name)
+        return @invalid = true if evaluated is name
+
+        baseColor = context.readColor(evaluated)
         @colorExpression = name
         @variables = baseColor?.variables
 
@@ -39,6 +43,7 @@ class ColorExpression
 
     color = new Color()
     color.colorExpression = expression
+    color.expressionHandler = @name
     @handle.call(color, @regexp.exec(expression), expression, context)
     color
 

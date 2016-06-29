@@ -1,21 +1,13 @@
 url = require 'url'
+fs = require 'fs-plus'
 
-MarkdownPreviewView = null # Defer until used
-renderer = null # Defer until used
-mathjaxHelper = null # Defer until used
-
-createMarkdownPreviewView = (state) ->
-  MarkdownPreviewView ?= require './markdown-preview-view'
-  new MarkdownPreviewView(state)
+MarkdownPreviewView = null
+renderer = null
+mathjaxHelper = null
 
 isMarkdownPreviewView = (object) ->
   MarkdownPreviewView ?= require './markdown-preview-view'
   object instanceof MarkdownPreviewView
-
-atom.deserializers.add
-  name: 'MarkdownPreviewView'
-  deserialize: (state) ->
-    createMarkdownPreviewView(state) if state.constructor is Object
 
 module.exports =
   config:
@@ -37,6 +29,7 @@ module.exports =
         'source.gfm'
         'source.litcoffee'
         'text.html.basic'
+        'text.md'
         'text.plain'
         'text.plain.null-grammar'
       ]
@@ -128,6 +121,11 @@ module.exports =
 
 
   activate: ->
+    if parseFloat(atom.getVersion()) < 1.7
+      atom.deserializers.add
+        name: 'MarkdownPreviewView'
+        deserialize: module.exports.createMarkdownPreviewView.bind(module.exports)
+
     atom.commands.add 'atom-workspace',
       'markdown-preview-plus:toggle': =>
         @toggle()
@@ -146,7 +144,7 @@ module.exports =
     atom.commands.add '.tree-view .file .name[data-name$=\\.ron]', 'markdown-preview-plus:preview-file', previewFile
     atom.commands.add '.tree-view .file .name[data-name$=\\.txt]', 'markdown-preview-plus:preview-file', previewFile
 
-    atom.workspace.addOpener (uriToOpen) ->
+    atom.workspace.addOpener (uriToOpen) =>
       try
         {protocol, host, pathname} = url.parse(uriToOpen)
       catch error
@@ -160,9 +158,14 @@ module.exports =
         return
 
       if host is 'editor'
-        createMarkdownPreviewView(editorId: pathname.substring(1))
+        @createMarkdownPreviewView(editorId: pathname.substring(1))
       else
-        createMarkdownPreviewView(filePath: pathname)
+        @createMarkdownPreviewView(filePath: pathname)
+
+  createMarkdownPreviewView: (state) ->
+    if state.editorId or fs.isFileSync(state.filePath)
+      MarkdownPreviewView ?= require './markdown-preview-view'
+      new MarkdownPreviewView(state)
 
   toggle: ->
     if isMarkdownPreviewView(atom.workspace.getActivePaneItem())
@@ -200,7 +203,7 @@ module.exports =
       searchAllPanes: true
     if atom.config.get('markdown-preview-plus.openPreviewInSplitPane')
       options.split = 'right'
-    atom.workspace.open(uri, options).done (markdownPreviewView) ->
+    atom.workspace.open(uri, options).then (markdownPreviewView) ->
       if isMarkdownPreviewView(markdownPreviewView)
         previousActivePane.activate()
 

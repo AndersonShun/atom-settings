@@ -1,0 +1,615 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Applications/Atom.app/Contents/Resources/app/apm/bin/node',
+1 verbose cli   '/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/bin/npm-cli.js',
+1 verbose cli   '--globalconfig',
+1 verbose cli   '/Users/ming/.atom/.apm/.apmrc',
+1 verbose cli   '--userconfig',
+1 verbose cli   '/Users/ming/.atom/.apmrc',
+1 verbose cli   'rebuild',
+1 verbose cli   '--target=0.36.8',
+1 verbose cli   '--arch=x64' ]
+2 info using npm@2.13.3
+3 info using node@v0.10.40
+4 info readInstalled object
+5 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview',
+5 verbose rebuild   'api-blueprint-preview@0.7.0' ]
+6 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views',
+6 verbose rebuild   'atom-space-pen-views@2.2.0' ]
+7 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/fuzzaldrin',
+7 verbose rebuild   'fuzzaldrin@2.1.0' ]
+8 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/space-pen',
+8 verbose rebuild   'space-pen@5.1.2' ]
+9 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim',
+9 verbose rebuild   'grim@1.5.0' ]
+10 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary',
+10 verbose rebuild   'emissary@1.3.3' ]
+11 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/underscore-plus',
+11 verbose rebuild   'underscore-plus@1.6.6' ]
+12 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/underscore-plus/node_modules/underscore',
+12 verbose rebuild   'underscore@1.6.0' ]
+13 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/mixto',
+13 verbose rebuild   'mixto@1.0.0' ]
+14 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/property-accessors',
+14 verbose rebuild   'property-accessors@1.1.3' ]
+15 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map',
+15 verbose rebuild   'es6-weak-map@0.1.4' ]
+16 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/d',
+16 verbose rebuild   'd@0.1.1' ]
+17 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext',
+17 verbose rebuild   'es5-ext@0.10.11' ]
+18 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator',
+18 verbose rebuild   'es6-iterator@2.0.0' ]
+19 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol',
+19 verbose rebuild   'es6-symbol@3.0.2' ]
+20 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-iterator',
+20 verbose rebuild   'es6-iterator@0.1.3' ]
+21 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-symbol',
+21 verbose rebuild   'es6-symbol@2.0.1' ]
+22 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/jquery',
+22 verbose rebuild   'jquery@2.1.4' ]
+23 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio',
+23 verbose rebuild   'cheerio@0.15.0' ]
+24 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2',
+24 verbose rebuild   'htmlparser2@3.7.3' ]
+25 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domhandler',
+25 verbose rebuild   'domhandler@2.2.1' ]
+26 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domelementtype',
+26 verbose rebuild   'domelementtype@1.3.0' ]
+27 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils',
+27 verbose rebuild   'domutils@1.5.1' ]
+28 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer',
+28 verbose rebuild   'dom-serializer@0.1.0' ]
+29 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules/domelementtype',
+29 verbose rebuild   'domelementtype@1.1.3' ]
+30 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules/entities',
+30 verbose rebuild   'entities@1.1.1' ]
+31 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream',
+31 verbose rebuild   'readable-stream@1.1.13' ]
+32 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/core-util-is',
+32 verbose rebuild   'core-util-is@1.0.2' ]
+33 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray',
+33 verbose rebuild   'isarray@0.0.1' ]
+34 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/string_decoder',
+34 verbose rebuild   'string_decoder@0.10.31' ]
+35 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits',
+35 verbose rebuild   'inherits@2.0.1' ]
+36 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/entities',
+36 verbose rebuild   'entities@1.0.0' ]
+37 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect',
+37 verbose rebuild   'CSSselect@0.4.1' ]
+38 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/CSSwhat',
+38 verbose rebuild   'CSSwhat@0.4.7' ]
+39 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/domutils',
+39 verbose rebuild   'domutils@1.4.3' ]
+40 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/domutils/node_modules/domelementtype',
+40 verbose rebuild   'domelementtype@1.3.0' ]
+41 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/lodash',
+41 verbose rebuild   'lodash@2.4.2' ]
+42 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus',
+42 verbose rebuild   'fs-plus@2.8.1' ]
+43 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/mkdirp',
+43 verbose rebuild   'mkdirp@0.3.5' ]
+44 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/rimraf',
+44 verbose rebuild   'rimraf@2.2.8' ]
+45 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/async',
+45 verbose rebuild   'async@0.2.10' ]
+46 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher',
+46 verbose rebuild   'pathwatcher@6.5.0' ]
+47 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/async',
+47 verbose rebuild   'async@0.2.10' ]
+48 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary',
+48 verbose rebuild   'emissary@1.3.3' ]
+49 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/mixto',
+49 verbose rebuild   'mixto@1.0.0' ]
+50 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors',
+50 verbose rebuild   'property-accessors@1.1.3' ]
+51 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map',
+51 verbose rebuild   'es6-weak-map@0.1.4' ]
+52 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/d',
+52 verbose rebuild   'd@0.1.1' ]
+53 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext',
+53 verbose rebuild   'es5-ext@0.10.11' ]
+54 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator',
+54 verbose rebuild   'es6-iterator@2.0.0' ]
+55 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol',
+55 verbose rebuild   'es6-symbol@3.0.2' ]
+56 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-iterator',
+56 verbose rebuild   'es6-iterator@0.1.3' ]
+57 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-symbol',
+57 verbose rebuild   'es6-symbol@2.0.1' ]
+58 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/event-kit',
+58 verbose rebuild   'event-kit@1.5.0' ]
+59 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/iconv-lite',
+59 verbose rebuild   'iconv-lite@0.4.13' ]
+60 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/nan',
+60 verbose rebuild   'nan@2.2.0' ]
+61 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/runas',
+61 verbose rebuild   'runas@3.1.1' ]
+62 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/temp',
+62 verbose rebuild   'temp@0.8.3' ]
+63 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/temp/node_modules/os-tmpdir',
+63 verbose rebuild   'os-tmpdir@1.0.1' ]
+64 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/temp/node_modules/rimraf',
+64 verbose rebuild   'rimraf@2.2.8' ]
+65 verbose rebuild path, id [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/wrench',
+65 verbose rebuild   'wrench@1.5.8' ]
+66 silly rebuild set [ '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/fuzzaldrin',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/space-pen',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/underscore-plus',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/underscore-plus/node_modules/underscore',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/mixto',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/property-accessors',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/d',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-iterator',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-symbol',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/jquery',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domhandler',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domelementtype',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules/domelementtype',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules/entities',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/core-util-is',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/string_decoder',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/entities',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/CSSwhat',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/domutils',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/domutils/node_modules/domelementtype',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/lodash',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/mkdirp',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/rimraf',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/async',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/async',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/mixto',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/property-accessors',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/d',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-iterator',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-symbol',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/event-kit',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/iconv-lite',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/nan',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher/node_modules/runas',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/temp',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/temp/node_modules/os-tmpdir',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/temp/node_modules/rimraf',
+66 silly rebuild set   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/wrench' ]
+67 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views
+68 info preinstall atom-space-pen-views@2.2.0
+69 info linkStuff atom-space-pen-views@2.2.0
+70 silly linkStuff atom-space-pen-views@2.2.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules as its parent node_modules
+71 verbose linkBins atom-space-pen-views@2.2.0
+72 verbose linkMans atom-space-pen-views@2.2.0
+73 verbose rebuildBundles atom-space-pen-views@2.2.0
+74 verbose rebuildBundles [ 'fuzzaldrin', 'space-pen' ]
+75 info install atom-space-pen-views@2.2.0
+76 info postinstall atom-space-pen-views@2.2.0
+77 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/fuzzaldrin
+78 info preinstall fuzzaldrin@2.1.0
+79 info linkStuff fuzzaldrin@2.1.0
+80 silly linkStuff fuzzaldrin@2.1.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules as its parent node_modules
+81 verbose linkBins fuzzaldrin@2.1.0
+82 verbose linkMans fuzzaldrin@2.1.0
+83 verbose rebuildBundles fuzzaldrin@2.1.0
+84 info install fuzzaldrin@2.1.0
+85 info postinstall fuzzaldrin@2.1.0
+86 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/space-pen
+87 info preinstall space-pen@5.1.2
+88 info linkStuff space-pen@5.1.2
+89 silly linkStuff space-pen@5.1.2 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules as its parent node_modules
+90 verbose linkBins space-pen@5.1.2
+91 verbose linkMans space-pen@5.1.2
+92 verbose rebuildBundles space-pen@5.1.2
+93 verbose rebuildBundles [ 'jquery' ]
+94 info install space-pen@5.1.2
+95 info postinstall space-pen@5.1.2
+96 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim
+97 info preinstall grim@1.5.0
+98 info linkStuff grim@1.5.0
+99 silly linkStuff grim@1.5.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules as its parent node_modules
+100 verbose linkBins grim@1.5.0
+101 verbose linkMans grim@1.5.0
+102 verbose rebuildBundles grim@1.5.0
+103 verbose rebuildBundles [ 'emissary' ]
+104 info install grim@1.5.0
+105 info postinstall grim@1.5.0
+106 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary
+107 info preinstall emissary@1.3.3
+108 info linkStuff emissary@1.3.3
+109 silly linkStuff emissary@1.3.3 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules as its parent node_modules
+110 verbose linkBins emissary@1.3.3
+111 verbose linkMans emissary@1.3.3
+112 verbose rebuildBundles emissary@1.3.3
+113 verbose rebuildBundles [ 'es6-weak-map', 'mixto', 'property-accessors' ]
+114 info install emissary@1.3.3
+115 info postinstall emissary@1.3.3
+116 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/underscore-plus
+117 info preinstall underscore-plus@1.6.6
+118 info linkStuff underscore-plus@1.6.6
+119 silly linkStuff underscore-plus@1.6.6 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules as its parent node_modules
+120 verbose linkBins underscore-plus@1.6.6
+121 verbose linkMans underscore-plus@1.6.6
+122 verbose rebuildBundles underscore-plus@1.6.6
+123 verbose rebuildBundles [ 'underscore' ]
+124 info install underscore-plus@1.6.6
+125 info postinstall underscore-plus@1.6.6
+126 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/underscore-plus/node_modules/underscore
+127 info preinstall underscore@1.6.0
+128 info linkStuff underscore@1.6.0
+129 silly linkStuff underscore@1.6.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/underscore-plus/node_modules as its parent node_modules
+130 verbose linkBins underscore@1.6.0
+131 verbose linkMans underscore@1.6.0
+132 verbose rebuildBundles underscore@1.6.0
+133 info install underscore@1.6.0
+134 info postinstall underscore@1.6.0
+135 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/mixto
+136 info preinstall mixto@1.0.0
+137 info linkStuff mixto@1.0.0
+138 silly linkStuff mixto@1.0.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules as its parent node_modules
+139 verbose linkBins mixto@1.0.0
+140 verbose linkMans mixto@1.0.0
+141 verbose rebuildBundles mixto@1.0.0
+142 info install mixto@1.0.0
+143 info postinstall mixto@1.0.0
+144 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/property-accessors
+145 info preinstall property-accessors@1.1.3
+146 info linkStuff property-accessors@1.1.3
+147 silly linkStuff property-accessors@1.1.3 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules as its parent node_modules
+148 verbose linkBins property-accessors@1.1.3
+149 verbose linkMans property-accessors@1.1.3
+150 verbose rebuildBundles property-accessors@1.1.3
+151 info install property-accessors@1.1.3
+152 info postinstall property-accessors@1.1.3
+153 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map
+154 info preinstall es6-weak-map@0.1.4
+155 info linkStuff es6-weak-map@0.1.4
+156 silly linkStuff es6-weak-map@0.1.4 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules as its parent node_modules
+157 verbose linkBins es6-weak-map@0.1.4
+158 verbose linkMans es6-weak-map@0.1.4
+159 verbose rebuildBundles es6-weak-map@0.1.4
+160 verbose rebuildBundles [ 'd', 'es5-ext', 'es6-iterator', 'es6-symbol' ]
+161 info install es6-weak-map@0.1.4
+162 info postinstall es6-weak-map@0.1.4
+163 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/d
+164 info preinstall d@0.1.1
+165 info linkStuff d@0.1.1
+166 silly linkStuff d@0.1.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules as its parent node_modules
+167 verbose linkBins d@0.1.1
+168 verbose linkMans d@0.1.1
+169 verbose rebuildBundles d@0.1.1
+170 info install d@0.1.1
+171 info postinstall d@0.1.1
+172 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext
+173 info preinstall es5-ext@0.10.11
+174 info linkStuff es5-ext@0.10.11
+175 silly linkStuff es5-ext@0.10.11 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules as its parent node_modules
+176 verbose linkBins es5-ext@0.10.11
+177 verbose linkMans es5-ext@0.10.11
+178 verbose rebuildBundles es5-ext@0.10.11
+179 verbose rebuildBundles [ 'es6-iterator', 'es6-symbol' ]
+180 info install es5-ext@0.10.11
+181 info postinstall es5-ext@0.10.11
+182 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-iterator
+183 info preinstall es6-iterator@2.0.0
+184 info linkStuff es6-iterator@2.0.0
+185 silly linkStuff es6-iterator@2.0.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules as its parent node_modules
+186 verbose linkBins es6-iterator@2.0.0
+187 verbose linkMans es6-iterator@2.0.0
+188 verbose rebuildBundles es6-iterator@2.0.0
+189 info install es6-iterator@2.0.0
+190 info postinstall es6-iterator@2.0.0
+191 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules/es6-symbol
+192 info preinstall es6-symbol@3.0.2
+193 info linkStuff es6-symbol@3.0.2
+194 silly linkStuff es6-symbol@3.0.2 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es5-ext/node_modules as its parent node_modules
+195 verbose linkBins es6-symbol@3.0.2
+196 verbose linkMans es6-symbol@3.0.2
+197 verbose rebuildBundles es6-symbol@3.0.2
+198 info install es6-symbol@3.0.2
+199 info postinstall es6-symbol@3.0.2
+200 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-iterator
+201 info preinstall es6-iterator@0.1.3
+202 info linkStuff es6-iterator@0.1.3
+203 silly linkStuff es6-iterator@0.1.3 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules as its parent node_modules
+204 verbose linkBins es6-iterator@0.1.3
+205 verbose linkMans es6-iterator@0.1.3
+206 verbose rebuildBundles es6-iterator@0.1.3
+207 info install es6-iterator@0.1.3
+208 info postinstall es6-iterator@0.1.3
+209 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules/es6-symbol
+210 info preinstall es6-symbol@2.0.1
+211 info linkStuff es6-symbol@2.0.1
+212 silly linkStuff es6-symbol@2.0.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/grim/node_modules/emissary/node_modules/es6-weak-map/node_modules as its parent node_modules
+213 verbose linkBins es6-symbol@2.0.1
+214 verbose linkMans es6-symbol@2.0.1
+215 verbose rebuildBundles es6-symbol@2.0.1
+216 info install es6-symbol@2.0.1
+217 info postinstall es6-symbol@2.0.1
+218 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/space-pen/node_modules/jquery
+219 info preinstall jquery@2.1.4
+220 info linkStuff jquery@2.1.4
+221 silly linkStuff jquery@2.1.4 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/atom-space-pen-views/node_modules/space-pen/node_modules as its parent node_modules
+222 verbose linkBins jquery@2.1.4
+223 verbose linkMans jquery@2.1.4
+224 verbose rebuildBundles jquery@2.1.4
+225 info install jquery@2.1.4
+226 info postinstall jquery@2.1.4
+227 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio
+228 info preinstall cheerio@0.15.0
+229 info linkStuff cheerio@0.15.0
+230 silly linkStuff cheerio@0.15.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules as its parent node_modules
+231 verbose linkBins cheerio@0.15.0
+232 verbose linkMans cheerio@0.15.0
+233 verbose rebuildBundles cheerio@0.15.0
+234 verbose rebuildBundles [ 'CSSselect', 'entities', 'htmlparser2', 'lodash' ]
+235 info install cheerio@0.15.0
+236 info postinstall cheerio@0.15.0
+237 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2
+238 info preinstall htmlparser2@3.7.3
+239 info linkStuff htmlparser2@3.7.3
+240 silly linkStuff htmlparser2@3.7.3 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules as its parent node_modules
+241 verbose linkBins htmlparser2@3.7.3
+242 verbose linkMans htmlparser2@3.7.3
+243 verbose rebuildBundles htmlparser2@3.7.3
+244 verbose rebuildBundles [ 'domelementtype', 'domhandler', 'domutils', 'readable-stream' ]
+245 info install htmlparser2@3.7.3
+246 info postinstall htmlparser2@3.7.3
+247 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domhandler
+248 info preinstall domhandler@2.2.1
+249 info linkStuff domhandler@2.2.1
+250 silly linkStuff domhandler@2.2.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules as its parent node_modules
+251 verbose linkBins domhandler@2.2.1
+252 verbose linkMans domhandler@2.2.1
+253 verbose rebuildBundles domhandler@2.2.1
+254 info install domhandler@2.2.1
+255 info postinstall domhandler@2.2.1
+256 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domelementtype
+257 info preinstall domelementtype@1.3.0
+258 info linkStuff domelementtype@1.3.0
+259 silly linkStuff domelementtype@1.3.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules as its parent node_modules
+260 verbose linkBins domelementtype@1.3.0
+261 verbose linkMans domelementtype@1.3.0
+262 verbose rebuildBundles domelementtype@1.3.0
+263 info install domelementtype@1.3.0
+264 info postinstall domelementtype@1.3.0
+265 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils
+266 info preinstall domutils@1.5.1
+267 info linkStuff domutils@1.5.1
+268 silly linkStuff domutils@1.5.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules as its parent node_modules
+269 verbose linkBins domutils@1.5.1
+270 verbose linkMans domutils@1.5.1
+271 verbose rebuildBundles domutils@1.5.1
+272 verbose rebuildBundles [ 'dom-serializer' ]
+273 info install domutils@1.5.1
+274 info postinstall domutils@1.5.1
+275 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer
+276 info preinstall dom-serializer@0.1.0
+277 info linkStuff dom-serializer@0.1.0
+278 silly linkStuff dom-serializer@0.1.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules as its parent node_modules
+279 verbose linkBins dom-serializer@0.1.0
+280 verbose linkMans dom-serializer@0.1.0
+281 verbose rebuildBundles dom-serializer@0.1.0
+282 verbose rebuildBundles [ 'domelementtype', 'entities' ]
+283 info install dom-serializer@0.1.0
+284 info postinstall dom-serializer@0.1.0
+285 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules/domelementtype
+286 info preinstall domelementtype@1.1.3
+287 info linkStuff domelementtype@1.1.3
+288 silly linkStuff domelementtype@1.1.3 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules as its parent node_modules
+289 verbose linkBins domelementtype@1.1.3
+290 verbose linkMans domelementtype@1.1.3
+291 verbose rebuildBundles domelementtype@1.1.3
+292 info install domelementtype@1.1.3
+293 info postinstall domelementtype@1.1.3
+294 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules/entities
+295 info preinstall entities@1.1.1
+296 info linkStuff entities@1.1.1
+297 silly linkStuff entities@1.1.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/domutils/node_modules/dom-serializer/node_modules as its parent node_modules
+298 verbose linkBins entities@1.1.1
+299 verbose linkMans entities@1.1.1
+300 verbose rebuildBundles entities@1.1.1
+301 info install entities@1.1.1
+302 info postinstall entities@1.1.1
+303 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream
+304 info preinstall readable-stream@1.1.13
+305 info linkStuff readable-stream@1.1.13
+306 silly linkStuff readable-stream@1.1.13 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules as its parent node_modules
+307 verbose linkBins readable-stream@1.1.13
+308 verbose linkMans readable-stream@1.1.13
+309 verbose rebuildBundles readable-stream@1.1.13
+310 verbose rebuildBundles [ 'core-util-is', 'inherits', 'isarray', 'string_decoder' ]
+311 info install readable-stream@1.1.13
+312 info postinstall readable-stream@1.1.13
+313 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/core-util-is
+314 info preinstall core-util-is@1.0.2
+315 info linkStuff core-util-is@1.0.2
+316 silly linkStuff core-util-is@1.0.2 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules as its parent node_modules
+317 verbose linkBins core-util-is@1.0.2
+318 verbose linkMans core-util-is@1.0.2
+319 verbose rebuildBundles core-util-is@1.0.2
+320 info install core-util-is@1.0.2
+321 info postinstall core-util-is@1.0.2
+322 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/isarray
+323 info preinstall isarray@0.0.1
+324 info linkStuff isarray@0.0.1
+325 silly linkStuff isarray@0.0.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules as its parent node_modules
+326 verbose linkBins isarray@0.0.1
+327 verbose linkMans isarray@0.0.1
+328 verbose rebuildBundles isarray@0.0.1
+329 info install isarray@0.0.1
+330 info postinstall isarray@0.0.1
+331 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/string_decoder
+332 info preinstall string_decoder@0.10.31
+333 info linkStuff string_decoder@0.10.31
+334 silly linkStuff string_decoder@0.10.31 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules as its parent node_modules
+335 verbose linkBins string_decoder@0.10.31
+336 verbose linkMans string_decoder@0.10.31
+337 verbose rebuildBundles string_decoder@0.10.31
+338 info install string_decoder@0.10.31
+339 info postinstall string_decoder@0.10.31
+340 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules/inherits
+341 info preinstall inherits@2.0.1
+342 info linkStuff inherits@2.0.1
+343 silly linkStuff inherits@2.0.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/htmlparser2/node_modules/readable-stream/node_modules as its parent node_modules
+344 verbose linkBins inherits@2.0.1
+345 verbose linkMans inherits@2.0.1
+346 verbose rebuildBundles inherits@2.0.1
+347 info install inherits@2.0.1
+348 info postinstall inherits@2.0.1
+349 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/entities
+350 info preinstall entities@1.0.0
+351 info linkStuff entities@1.0.0
+352 silly linkStuff entities@1.0.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules as its parent node_modules
+353 verbose linkBins entities@1.0.0
+354 verbose linkMans entities@1.0.0
+355 verbose rebuildBundles entities@1.0.0
+356 info install entities@1.0.0
+357 info postinstall entities@1.0.0
+358 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect
+359 info preinstall CSSselect@0.4.1
+360 info linkStuff CSSselect@0.4.1
+361 silly linkStuff CSSselect@0.4.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules as its parent node_modules
+362 verbose linkBins CSSselect@0.4.1
+363 verbose linkMans CSSselect@0.4.1
+364 verbose rebuildBundles CSSselect@0.4.1
+365 verbose rebuildBundles [ 'CSSwhat', 'domutils' ]
+366 info install CSSselect@0.4.1
+367 info postinstall CSSselect@0.4.1
+368 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/CSSwhat
+369 info preinstall CSSwhat@0.4.7
+370 info linkStuff CSSwhat@0.4.7
+371 silly linkStuff CSSwhat@0.4.7 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules as its parent node_modules
+372 verbose linkBins CSSwhat@0.4.7
+373 verbose linkMans CSSwhat@0.4.7
+374 verbose rebuildBundles CSSwhat@0.4.7
+375 info install CSSwhat@0.4.7
+376 info postinstall CSSwhat@0.4.7
+377 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/domutils
+378 info preinstall domutils@1.4.3
+379 info linkStuff domutils@1.4.3
+380 silly linkStuff domutils@1.4.3 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules as its parent node_modules
+381 verbose linkBins domutils@1.4.3
+382 verbose linkMans domutils@1.4.3
+383 verbose rebuildBundles domutils@1.4.3
+384 verbose rebuildBundles [ 'domelementtype' ]
+385 info install domutils@1.4.3
+386 info postinstall domutils@1.4.3
+387 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/domutils/node_modules/domelementtype
+388 info preinstall domelementtype@1.3.0
+389 info linkStuff domelementtype@1.3.0
+390 silly linkStuff domelementtype@1.3.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/CSSselect/node_modules/domutils/node_modules as its parent node_modules
+391 verbose linkBins domelementtype@1.3.0
+392 verbose linkMans domelementtype@1.3.0
+393 verbose rebuildBundles domelementtype@1.3.0
+394 info install domelementtype@1.3.0
+395 info postinstall domelementtype@1.3.0
+396 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules/lodash
+397 info preinstall lodash@2.4.2
+398 info linkStuff lodash@2.4.2
+399 silly linkStuff lodash@2.4.2 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/cheerio/node_modules as its parent node_modules
+400 verbose linkBins lodash@2.4.2
+401 verbose linkMans lodash@2.4.2
+402 verbose rebuildBundles lodash@2.4.2
+403 info install lodash@2.4.2
+404 info postinstall lodash@2.4.2
+405 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus
+406 info preinstall fs-plus@2.8.1
+407 info linkStuff fs-plus@2.8.1
+408 silly linkStuff fs-plus@2.8.1 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules as its parent node_modules
+409 verbose linkBins fs-plus@2.8.1
+410 verbose linkMans fs-plus@2.8.1
+411 verbose rebuildBundles fs-plus@2.8.1
+412 verbose rebuildBundles [ '.bin', 'async', 'mkdirp', 'rimraf' ]
+413 info install fs-plus@2.8.1
+414 info postinstall fs-plus@2.8.1
+415 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/mkdirp
+416 info preinstall mkdirp@0.3.5
+417 info linkStuff mkdirp@0.3.5
+418 silly linkStuff mkdirp@0.3.5 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules as its parent node_modules
+419 verbose linkBins mkdirp@0.3.5
+420 verbose linkMans mkdirp@0.3.5
+421 verbose rebuildBundles mkdirp@0.3.5
+422 info install mkdirp@0.3.5
+423 info postinstall mkdirp@0.3.5
+424 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/rimraf
+425 info preinstall rimraf@2.2.8
+426 info linkStuff rimraf@2.2.8
+427 silly linkStuff rimraf@2.2.8 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules as its parent node_modules
+428 verbose linkBins rimraf@2.2.8
+429 verbose link bins [ { rimraf: './bin.js' },
+429 verbose link bins   '/Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/.bin',
+429 verbose link bins   false ]
+430 verbose linkMans rimraf@2.2.8
+431 verbose rebuildBundles rimraf@2.2.8
+432 silly gentlyRm /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/.bin/rimraf is being purged
+433 verbose gentlyRm don't care about contents; nuking /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/.bin/rimraf
+434 silly vacuum-fs purging /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/.bin/rimraf
+435 silly vacuum-fs removing /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/.bin
+436 silly vacuum-fs quitting because other entries in /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules
+437 info install rimraf@2.2.8
+438 info postinstall rimraf@2.2.8
+439 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules/async
+440 info preinstall async@0.2.10
+441 info linkStuff async@0.2.10
+442 silly linkStuff async@0.2.10 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules/fs-plus/node_modules as its parent node_modules
+443 verbose linkBins async@0.2.10
+444 verbose linkMans async@0.2.10
+445 verbose rebuildBundles async@0.2.10
+446 info install async@0.2.10
+447 info postinstall async@0.2.10
+448 info build /Users/ming/.atom/packages/api-blueprint-preview/node_modules/pathwatcher
+449 info preinstall pathwatcher@6.5.0
+450 info linkStuff pathwatcher@6.5.0
+451 silly linkStuff pathwatcher@6.5.0 has /Users/ming/.atom/packages/api-blueprint-preview/node_modules as its parent node_modules
+452 verbose linkBins pathwatcher@6.5.0
+453 verbose linkMans pathwatcher@6.5.0
+454 verbose rebuildBundles pathwatcher@6.5.0
+455 verbose rebuildBundles [ 'async', 'emissary', 'event-kit', 'iconv-lite', 'nan', 'runas' ]
+456 info install pathwatcher@6.5.0
+457 verbose unsafe-perm in lifecycle true
+458 info pathwatcher@6.5.0 Failed to exec install script
+459 verbose stack Error: pathwatcher@6.5.0 install: `node-gyp rebuild`
+459 verbose stack Exit status 1
+459 verbose stack     at EventEmitter.<anonymous> (/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/lib/utils/lifecycle.js:214:16)
+459 verbose stack     at EventEmitter.emit (events.js:98:17)
+459 verbose stack     at ChildProcess.<anonymous> (/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/lib/utils/spawn.js:24:14)
+459 verbose stack     at ChildProcess.emit (events.js:98:17)
+459 verbose stack     at maybeClose (child_process.js:766:16)
+459 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:833:5)
+460 verbose pkgid pathwatcher@6.5.0
+461 verbose cwd /Users/ming/.atom/packages/api-blueprint-preview
+462 error Darwin 15.4.0
+463 error argv "/Applications/Atom.app/Contents/Resources/app/apm/bin/node" "/Applications/Atom.app/Contents/Resources/app/apm/node_modules/npm/bin/npm-cli.js" "--globalconfig" "/Users/ming/.atom/.apm/.apmrc" "--userconfig" "/Users/ming/.atom/.apmrc" "rebuild" "--target=0.36.8" "--arch=x64"
+464 error node v0.10.40
+465 error npm  v2.13.3
+466 error code ELIFECYCLE
+467 error pathwatcher@6.5.0 install: `node-gyp rebuild`
+467 error Exit status 1
+468 error Failed at the pathwatcher@6.5.0 install script 'node-gyp rebuild'.
+468 error This is most likely a problem with the pathwatcher package,
+468 error not with npm itself.
+468 error Tell the author that this fails on your system:
+468 error     node-gyp rebuild
+468 error You can get their info via:
+468 error     npm owner ls pathwatcher
+468 error There is likely additional logging output above.
+469 verbose exit [ 1, true ]

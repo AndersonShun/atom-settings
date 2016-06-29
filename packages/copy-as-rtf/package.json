@@ -1,7 +1,7 @@
 {
   "name": "copy-as-rtf",
   "main": "./lib/copy-as-rtf",
-  "version": "0.9.1",
+  "version": "0.9.3",
   "description": "A package to export highlighted code as RTF",
   "activationCommands": {
     "atom-workspace": [
@@ -21,16 +21,16 @@
     "copy-paste": "1.1.4",
     "bl": "~0.4.1"
   },
-  "readme": "# Copy as RTF\n\nA package to export highlighted code as RTF,\ninspired by the [SublimeHighlight](https://github.com/n1k0/SublimeHighlight) package.\n\n## Available keymaps\n\n* <kbd>alt + r</kbd> copies the current file/selection as RTF into your clipboard.\n\n## Available Options\n\n* __fontface__, defaults to `Monaco`.\n* __style__, defaults to `Tango`.\n* __fontsize__, defaults to `16`.\n\n## Installation Information\n\nIf not installed in your system yet, download Python [here](https://www.python.org/downloads/)\n\nCopyright (c) 2014 Lucas Mazza.\n",
+  "readme": "# Copy as RTF\n\nA package to export highlighted code as RTF,\ninspired by the [SublimeHighlight](https://github.com/n1k0/SublimeHighlight) package.\n\n## Available keymaps\n\n* <kbd>alt + r</kbd> copies the current file/selection as RTF into your clipboard.\n\n## Available Options\n\n* __fontface__, defaults to `Monaco`.\n* __style__, defaults to `Tango`.\n* __fontsize__, defaults to `16`.\n\n## Installation Information\n\nIf not installed in your system yet, download Python [here](https://www.python.org/downloads/) and make sure it is set in your environment variables (help [here](http://superuser.com/a/143121))\n\nCopyright (c) 2014 Lucas Mazza.\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/lucasmazza/copy-as-rtf/issues"
   },
   "homepage": "https://github.com/lucasmazza/copy-as-rtf#readme",
-  "_id": "copy-as-rtf@0.9.1",
-  "_shasum": "4237a4e5507e43eb8864593417d0f38b90d4970e",
-  "_resolved": "file:../d-1151029-67528-m8bntl/package.tgz",
-  "_from": "../d-1151029-67528-m8bntl/package.tgz",
+  "_id": "copy-as-rtf@0.9.3",
+  "_shasum": "20dbbf66595bcb8e5a247852056f1a3277e6dfbd",
+  "_resolved": "file:../d-116529-53998-fecjj7/package.tgz",
+  "_from": "../d-116529-53998-fecjj7/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
@@ -41,7 +41,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "1.0.33",
+        "version": "1.0.34",
         "path": "node_modules/bl/node_modules/readable-stream/readable.js"
       },
       {
@@ -91,7 +91,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "1.0.33",
+        "version": "1.0.34",
         "path": "node_modules/pygmentize-bundled/node_modules/readable-stream/readable.js"
       },
       {
@@ -121,7 +121,7 @@
       },
       {
         "name": "readable-stream",
-        "version": "1.1.13",
+        "version": "1.1.14",
         "path": "node_modules/pygmentize-bundled/node_modules/through2/node_modules/readable-stream/readable.js"
       },
       {

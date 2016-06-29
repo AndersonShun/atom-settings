@@ -28,7 +28,7 @@ describe "MarkdownPreviewView", ->
 
     this.addMatchers
       toStartWith: (expected) ->
-        this.actual.slice(0, expected.length) is expected;
+        this.actual.slice(0, expected.length) is expected
 
   afterEach ->
     preview.destroy()
@@ -67,12 +67,23 @@ describe "MarkdownPreviewView", ->
     newPreview = null
 
     afterEach ->
-      newPreview.destroy()
+      newPreview?.destroy()
 
-    it "recreates the file when serialized/deserialized", ->
+    it "recreates the preview when serialized/deserialized", ->
       newPreview = atom.deserializers.deserialize(preview.serialize())
       jasmine.attachToDOM(newPreview.element)
       expect(newPreview.getPath()).toBe preview.getPath()
+
+    it "does not recreate a preview when the file no longer exists", ->
+      filePath = path.join(temp.mkdirSync('markdown-preview-'), 'foo.md')
+      fs.writeFileSync(filePath, '# Hi')
+
+      newPreview = new MarkdownPreviewView({filePath})
+      serialized = newPreview.serialize()
+      fs.removeSync(filePath)
+
+      newPreview = atom.deserializers.deserialize(serialized)
+      expect(newPreview).toBeUndefined()
 
     it "serializes the editor id when opened for an editor", ->
       preview.destroy()
@@ -124,6 +135,31 @@ describe "MarkdownPreviewView", ->
       editor = preview.find("atom-text-editor[data-grammar='text plain null-grammar']")
       decorations = editor[0].getModel().getDecorations(class: 'cursor-line', type: 'line')
       expect(decorations.length).toBe 0
+
+    it "removes a trailing newline but preserves remaining leading and trailing whitespace", ->
+      newFilePath = atom.project.getDirectories()[0].resolve('subdir/trim-nl.md')
+      newPreview = new MarkdownPreviewView({filePath: newFilePath})
+      jasmine.attachToDOM(newPreview.element)
+
+      waitsForPromise ->
+        newPreview.renderMarkdown()
+
+      runs ->
+        editor = newPreview.find("atom-text-editor")
+        expect(editor).toExist()
+        expect(editor[0].getModel().getText()).toBe """
+
+               a
+              b
+             c
+            d
+           e
+          f
+
+        """
+
+      runs ->
+        newPreview.destroy()
 
     describe "when the code block's fence name has a matching grammar", ->
       it "assigns the grammar on the atom-text-editor", ->
@@ -539,7 +575,7 @@ describe "MarkdownPreviewView", ->
       runs ->
         expect(atom.clipboard.read()).toBe """
          <h1>Code Block</h1>
-         <pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="keyword control js"><span>if</span></span><span>&nbsp;a&nbsp;</span><span class="keyword operator js"><span>===</span></span><span>&nbsp;</span><span class="constant numeric js"><span>3</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;b&nbsp;</span><span class="keyword operator js"><span>=</span></span><span>&nbsp;</span><span class="constant numeric js"><span>5</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span></span></div></pre>
+         <pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="keyword control js"><span>if</span></span><span>&nbsp;a&nbsp;</span><span class="keyword operator comparison js"><span>===</span></span><span>&nbsp;</span><span class="constant numeric decimal js"><span>3</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;b&nbsp;</span><span class="keyword operator assignment js"><span>=</span></span><span>&nbsp;</span><span class="constant numeric decimal js"><span>5</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span></span></div></pre>
          <p>encoding \u2192 issue</p>
         """
 
