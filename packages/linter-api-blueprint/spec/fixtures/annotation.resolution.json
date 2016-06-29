@@ -1,9 +1,0 @@
-{
-  "filePath": "",
-  "type": "Warning",
-  "text": "action is missing a response",
-  "range": [
-    [0, 0],
-    [0, 1]
-  ]
-}

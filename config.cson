@@ -9,6 +9,12 @@
     ]
     python_max_line_length: 120
   "atom-css-comb": {}
+  "atom-material-ui":
+    colors: {}
+    tabs: {}
+    treeView: {}
+    ui:
+      panelContrast: true
   "autocomplete-clang": {}
   "autocomplete-plus": {}
   "autocomplete-plus-python-jedi":
@@ -111,6 +117,16 @@
     ]
     sortPaletteColors: "by color"
     traverseIntoSymlinkDirectories: true
+  "platformio-ide-terminal":
+    ansiColors:
+      normal:
+        blue:
+          red: 81
+          green: 180
+          blue: 221
+          alpha: 1
+    style:
+      theme: "dracula"
   "preview-plus": {}
   "python-iresolve":
     checkOnSave: false
