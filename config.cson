@@ -1,4 +1,9 @@
 "*":
+  "activate-power-mode":
+    particles:
+      size: {}
+    screenShake:
+      enabled: false
   "aligner-python":
     ":-leftSpace": true
   "atom-beautify":
